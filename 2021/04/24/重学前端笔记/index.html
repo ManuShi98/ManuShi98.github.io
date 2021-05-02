@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/04/28/pgHSCmWn5cvG6MK.jpg">
 <meta property="og:image" content="https://i.loli.net/2021/04/29/fGnzFEPjYgZKuSN.jpg">
 <meta property="article:published_time" content="2021-04-24T11:25:47.000Z">
-<meta property="article:modified_time" content="2021-05-02T01:40:34.486Z">
+<meta property="article:modified_time" content="2021-05-02T02:09:19.052Z">
 <meta property="article:author" content="ManuShi98">
 <meta property="article:tag" content="前端基础">
 <meta name="twitter:card" content="summary">
@@ -375,7 +375,10 @@
 <h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><ol>
 <li>对象具有唯一标识性：即便两个完全相同的对象，也并非同一对象。（{}!=={}）</li>
 <li>对象具有状态：对象具有状态，同一对象可能处于不同状态之下。</li>
-<li>对象具有行为：对象的状态，可能因为它的行为发生变迁。<h3 id="js对象的两类属性"><a href="#js对象的两类属性" class="headerlink" title="js对象的两类属性"></a>js对象的两类属性</h3>javascript用一组特征（attribute）来描述属性（property）。第一类属性是<strong>数据属性</strong>。数据属性具有四个特征：</li>
+<li>对象具有行为：对象的状态，可能因为它的行为发生变迁。</li>
+</ol>
+<h3 id="js对象的两类属性"><a href="#js对象的两类属性" class="headerlink" title="js对象的两类属性"></a>js对象的两类属性</h3><p>javascript用一组特征（attribute）来描述属性（property）。第一类属性是<strong>数据属性</strong>。数据属性具有四个特征：</p>
+<ol>
 <li>value：属性的值</li>
 <li>writable：是否是只读数据</li>
 <li>enumerable：是否能够使用for in能否枚举该属性</li>
@@ -416,15 +419,12 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123; </span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">name</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="title">speak</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name + <span class="string">&#x27; makes a noise.&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">name</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">super</span>(name); <span class="comment">// call the super class constructor and pass in the name parameter</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">speak</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name + <span class="string">&#x27; barks.&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> d = <span class="keyword">new</span> Dog(<span class="string">&#x27;Mitzie&#x27;</span>);</span><br><span class="line">d.speak(); <span class="comment">// Mitzie barks.</span></span><br></pre></td></tr></table></figure>
 <h2 id="Javascript执行"><a href="#Javascript执行" class="headerlink" title="Javascript执行"></a>Javascript执行</h2><p>我们应该形成一个感性的认识：一个javascript引擎会常驻内存中，等待着我们把javascript代码或者函数传递给它执行。在ES3或者更早的版本中，javascript本身还没有异步执行代码的能力，所以传递javascript代码后，引擎就直接把代码顺序执行了。这个任务是宿主发起的任务。在ES5后加入了promise，这样不需要浏览器的安排，javascript本身也可以发起任务了。我们称宿主发起的是宏观任务，javascript发起的是微观任务。</p>
 <h3 id="宏观任务和微观任务"><a href="#宏观任务和微观任务" class="headerlink" title="宏观任务和微观任务"></a>宏观任务和微观任务</h3><p><img src="https://i.loli.net/2021/04/19/n9MjQ1C72yW3qiB.jpg" alt="marco-and-mirco-task.jpg"><br>通过宏观任务和微观任务机制，我们就可以实现javascript引擎级和宿主级的任务了。比如promise永远在队列尾部添加微观任务，setTimeout等宿主api，则会添加宏观任务。执行的顺序是同步任务=&gt;微观任务=&gt;宏观任务。在<a target="_blank" rel="noopener" href="https://www.cnblogs.com/jiangyuzhen/p/11064408.html">这里</a>有非常详尽的例子。</p>
-<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>Javascript闭包的组成部分：</p>
-<ul>
-<li>环境部分<ul>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>Javascript闭包的组成部分为两个，环境部分和表达式部分。<br>环境部分包括：</p>
+<ol>
 <li>环境：函数的词法环境（执行上下文的一部分）</li>
 <li>标识符列表：函数中用到的未声明的变量</li>
-</ul>
-</li>
-<li>表达式部分：函数体</li>
-</ul>
+</ol>
+<p>表达式部分就是函数体</p>
 <h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><p>javascript把一段代码，执行所需的所有信息定义为：“执行上下文“。<br><br>在ES3中：<br></p>
 <ul>
 <li>scope: 作用域，常常叫做作用域链。</li>
@@ -499,7 +499,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;&#125;</span><br><span class="line">o.foo = <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">o.foo()()(); <span class="comment">// o, o, o</span></span><br></pre></td></tr></table></figure>
 <p>这个例子中，我们定义了三层嵌套的函数，最外层为普通函数，两层是箭头函数。三个函数的this都是对象o.</p>
 <h4 id="操作this的内置函数"><a href="#操作this的内置函数" class="headerlink" title="操作this的内置函数"></a>操作this的内置函数</h4><p>Function.prototype.call和Function.prototype.apply可以指定函数调用传入的this,示例如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a, b, c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(a, b, c);<span class="number">4</span></span><br><span class="line">&#125;</span><br><span class="line">foo.call(&#123;&#125;, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">foo.apply(&#123;&#125;, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a, b, c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(a, b, c);</span><br><span class="line">&#125;</span><br><span class="line">foo.call(&#123;&#125;, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">foo.apply(&#123;&#125;, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br></pre></td></tr></table></figure>
 <h4 id="new与function"><a href="#new与function" class="headerlink" title="new与function"></a>new与function</h4><p><img src="https://i.loli.net/2021/04/26/9fY4KDRkCvxsoUH.png" alt="new-and-function.png"></p>
 <h3 id="Completion类型"><a href="#Completion类型" class="headerlink" title="Completion类型"></a>Completion类型</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125; <span class="keyword">catch</span>(err) &#123;</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;a&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo());</span><br></pre></td></tr></table></figure>
 <p>这段代码中，finally执行了，return也生效了。实际上，finally放return则finally中的return会覆盖try的return。Completion Record用于描述一个语句执行完的结果，它有三个字段：</p>
@@ -510,14 +510,7 @@
 </ul>
 <p>js依靠completion record类型，在复杂的嵌套结构中实现各种控制。<br><img src="https://i.loli.net/2021/04/28/MEpYNXWP4TavZlH.jpg" alt="js-yuju.jpg"></p>
 <h4 id="普通语句"><a href="#普通语句" class="headerlink" title="普通语句"></a>普通语句</h4><ul>
-<li>声名类语句<ul>
-<li>var</li>
-<li>const</li>
-<li>let</li>
-<li>函数声明</li>
-<li>类声明</li>
-</ul>
-</li>
+<li>声名类语句（var，const，let，函数声明，类声明）</li>
 <li>表达式语句</li>
 <li>空语句</li>
 <li>debugger语句</li>
@@ -535,13 +528,15 @@
 <li>whitespace 空白字符</li>
 <li>lineTerminator 换行符</li>
 <li>comment 注释</li>
-<li>token 词<ul>
+<li>token 词<blockquote>
+<ol>
 <li>identifierName 标识符名称，如变量名和关键字</li>
 <li>punctuator 符号</li>
 <li>numericLiteral 数字直接量，就是我们写的数字</li>
 <li>stringLiteral 字符串直接量，就是我们用单引号或双引号引起来的直接量。</li>
 <li>template 字符串模板，用反括号`括起来的直接量。</li>
-</ul>
+</ol>
+</blockquote>
 </li>
 </ul>
 <p>js中不但支持除法运算符’/‘和’/=’，也支持正则表达式’/abc/‘。这种情况对词法分析是没法处理的，所以js定义了两套词法，靠与法分析传一个标识给词法分析器，让它决定使用哪一套词法。另外”${}”内部可以放任何js代码，所以这部分不允许出现’}’。是否允许”}“两种情况和除法及正则表达式两种相乘就是四种词法定义，所以js中有四种定义：</p>
