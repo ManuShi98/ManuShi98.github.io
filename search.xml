@@ -1686,12 +1686,12 @@
       </tags>
   </entry>
   <entry>
-    <title>重学前端笔记</title>
+    <title>Relearn Front End Technology</title>
     <url>/2021/04/24/%E9%87%8D%E5%AD%A6%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>我真不会前端啊…<a href="https://time.geekbang.org/column/intro/100023201">课程地址</a></p>
+    <content><![CDATA[<p>Note of relearn Front End. <a href="https://time.geekbang.org/column/intro/100023201">Course URL</a></p>
 <span id="more"></span>
 
-<h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><h2 id="类型系统"><a href="#类型系统" class="headerlink" title="类型系统"></a>类型系统</h2><h3 id="undefined，null"><a href="#undefined，null" class="headerlink" title="undefined，null"></a>undefined，null</h3><p>有的编程规范要求使用void 0代替undefined。因为undefined是一个变量，为了避免无意的撰改，通常使用void 0来代替。虽然es5中undefined的值是read-only的，但是在局部作用域仍可能被修改。void后跟任何表达式的值都是undefined，而void 0又是最短和表意最清楚的。<br><br>undefined和null的表意略有不同， undefined表示未定义，而null表示定义了但是为空。null是javascript的关键字，所以可以放心使用。</p>
+<h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><h2 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h2><h3 id="undefined，null"><a href="#undefined，null" class="headerlink" title="undefined，null"></a>undefined，null</h3><p>有的编程规范要求使用void 0代替undefined。因为undefined是一个变量，为了避免无意的撰改，通常使用void 0来代替。虽然es5中undefined的值是read-only的，但是在局部作用域仍可能被修改。void后跟任何表达式的值都是undefined，而void 0又是最短和表意最清楚的。<br><br>undefined和null的表意略有不同， undefined表示未定义，而null表示定义了但是为空。null是javascript的关键字，所以可以放心使用。</p>
 <h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>string是有最大长度2^53-1的。但是考虑到我们通常使用utf-8或者utf-16,所以字符串的最大长度，实际上是受字符串编码长度影响的。</p>
 <h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><p>JavaScript 中的 Number 类型有 18437736874454810627(即 2^64-2^53+3) 个值。其中9007199254740990代表NaN,Infinity表示无穷大，-Infinity表示负无穷大。<br><br>另外，javascript中有+0和-0.区别是除零时的结果一个是正无穷大，另一个是负无穷大。也可以用1/x是正无穷大还是负无穷大检测一个数是+0还是-0。<br><br>javascript存在浮点数不精确的问题（IEEE754）。一个经典的问题就是0.1+0.2不等于0.3.为了解决这个问题</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Math</span>.abs(<span class="number">0.1</span>+<span class="number">0.2</span>-<span class="number">0.3</span>)&lt;=<span class="built_in">Number</span>.EPSILON;</span><br></pre></td></tr></table></figure>
@@ -2003,10 +2003,10 @@
 </ol>
 ]]></content>
       <categories>
-        <category>前端基础</category>
+        <category>Front-End</category>
       </categories>
       <tags>
-        <tag>前端基础</tag>
+        <tag>Front-End</tag>
       </tags>
   </entry>
 </search>
