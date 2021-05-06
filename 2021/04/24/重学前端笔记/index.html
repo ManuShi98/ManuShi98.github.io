@@ -768,6 +768,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2021/05/06/Practice%20of%20Git%20Flow/" rel="prev" title="Practice of Git Flow">
+                Practice of Git Flow <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -798,8 +802,7 @@
   
     <div class="comments" id="comments">
       
-        <div onclick="showGitment()" id="gitment-display-button">Show comments from Gitment</div>
-        <div id="gitment-container" style="display:none"></div>
+        <div id="gitment-container"></div>
       
     </div>
 
@@ -855,7 +858,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -866,7 +869,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -877,7 +880,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1157,11 +1160,7 @@
       }
 
       
-      function showGitment(){
-        document.getElementById("gitment-display-button").style.display = "none";
-        document.getElementById("gitment-container").style.display = "block";
-        renderGitment();
-      }
+      renderGitment();
       
       </script>
     
