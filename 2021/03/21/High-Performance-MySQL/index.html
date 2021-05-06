@@ -377,16 +377,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2021/03/21/High-Performance-MySQL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2021/03/21/High-Performance-MySQL/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -717,12 +707,7 @@
           
 
   
-    <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
-    </div>
-
+	<div id="gitalk-container"></div>
   
 
 
@@ -1046,47 +1031,26 @@
 
 
 
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname, 
-            owner: 'ManuShi98',
-            repo: 'blogcomment',
-            
-            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: '4922913e0e8b8940b2233e90f05da307f7c26de6',
-            
-                client_id: 'fa6d33118e19b15ec39e'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      renderGitment();
-      
-      </script>
-    
 
 
 
 
 
-
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: 'fa6d33118e19b15ec39e',
+      clientSecret: '4922913e0e8b8940b2233e90f05da307f7c26de6',
+      repo: 'blogcomment',
+      owner: 'ManuShi98',
+      admin: ['ManuShi98'],
+      id: location.pathname,
+      distractionFreeMode: 'false'
+    })
+    gitalk.render('gitalk-container')
+  </script>
 
   
 
