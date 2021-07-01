@@ -758,8 +758,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2021/05/06/Practice%20of%20Git%20Flow/" rel="prev" title="Practice of Git Flow">
-                Practice of Git Flow <i class="fa fa-chevron-right"></i>
+              <a href="/2021/07/01/Head%20first%20Red%20Black%20Tree/" rel="prev" title="Head first Red Black Tree">
+                Head first Red Black Tree <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1122,6 +1122,7 @@
   <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
   <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
   <div id="gitalk-container"></div>
+  <script src="/js/src/md5.min.js"></script>
   <script type="text/javascript">
     var gitalk = new Gitalk({
       clientID: 'fa6d33118e19b15ec39e',
@@ -1129,7 +1130,7 @@
       repo: 'blogcomment',
       owner: 'ManuShi98',
       admin: ['ManuShi98'],
-      id: location.pathname,
+      id: md5(location.pathname),
       distractionFreeMode: 'false'
     })
     gitalk.render('gitalk-container')
