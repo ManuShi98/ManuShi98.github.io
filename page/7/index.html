@@ -305,6 +305,157 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/11/13/BZOJ%20-%202038%20%E5%B0%8FZ%E7%9A%84%E8%A2%9C%E5%AD%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/13/BZOJ%20-%202038%20%E5%B0%8FZ%E7%9A%84%E8%A2%9C%E5%AD%90/" itemprop="url">BZOJ - 2038 小Z的袜子</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-13T13:50:47+08:00">
+                2017-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%8E%AB%E9%98%9F%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">莫队算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h4 id="莫队算法"><a href="#莫队算法" class="headerlink" title="莫队算法"></a>莫队算法</h4><p>莫队算法是一种解决一系列无修改的区间查询问题的算法。对于区间查询问题，我们通常使用线段树。但是考虑这样一个问题：对[l,r]区间内的计算至少重复三次数的个数。这样的问题如果使用线段树需要在节点上维护区间内数字的个数，而这样维护显然并不能在O(1)完成，因而我们常常使用莫队算法。莫队算法的使用条件是我们可以O(1)时间内通过已知的[l,r]答案得到[l-1,r],[l+1,r],[l,r+1],[l,r-1]的答案，并且我们能够离线询问。通过对询问排序，我们利用O(1)的转移能够以一个较为满意的复杂度解决这个问题(避免重复扫描数列）。这个问题可以使用曼哈顿距离最小生成树来写，但这样写代码似乎太麻烦了些，所以我们使用分块。我们以询问左端点所在的分块的序号为第一关键字，右端点的大小为第二关键字。</p>
+<h4 id="莫队算法时间复杂度"><a href="#莫队算法时间复杂度" class="headerlink" title="莫队算法时间复杂度"></a>莫队算法时间复杂度</h4><blockquote>
+<p>分块相同时，右端点递增是O(N)的，分块共有O(sqrt(N)) )个，复杂度为O(N^(1.5))<br>分块转移时，右端点最多变化N，分块共有O(sqrt(N) )个，复杂度为O(N^(1.5)<br>分块相同时，左端点最多变化sqrt(N) ，分块转移时，左端点最多变化2sqrt(N) ，共有N个询问，复杂度为O(N^(1.5) )<br>所有总时间复杂度就是O(N^1.5)  </p>
+</blockquote>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/25017840">莫队算法 (Mo’s Algorithm)</a><br><a target="_blank" rel="noopener" href="http://blog.csdn.net/hzj1054689699/article/details/51866615">莫队算法</a></p>
+<h4 id="本题思路"><a href="#本题思路" class="headerlink" title="本题思路"></a>本题思路</h4><p>莫队模板题。令当前可选的袜子为ans<br>ans=(color[i]*(color[i]-1)/2);<br>化简得到ans=(Σ(sum(color[i])2)−(R−L+1))/((R−L+1)∗(R−L))<br>所以更新为ans=ans-ci^2+(ci+1)^2</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/13/BZOJ%20-%202038%20%E5%B0%8FZ%E7%9A%84%E8%A2%9C%E5%AD%90/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/11/10/POJ%20-%201743%20Musical%20Theme(%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%8F%A0%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E4%B8%B2)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1637,153 +1788,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/10/13/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E8%A1%A5%E6%A1%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/13/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E8%A1%A5%E6%A1%A3/" itemprop="url">扩展欧几里得补档</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-13T17:17:42+08:00">
-                2017-10-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97/" itemprop="url" rel="index">
-                    <span itemprop="name">扩展欧几里得</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>##POJ – 1061 青蛙的约会</p>
-<p><em>思路：</em><br>不能直接暴力，看网上的题解说这道题卡了使用mod的运行时间。所以要使用extgcd。方程由m<em>t+x=k</em>l+n*t+y推出得到(m-n)<em>t-k</em>l=y-x计算这个方程即可</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/13/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E8%A1%A5%E6%A1%A3/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1836,7 +1840,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">78</span>
+                  <span class="site-state-item-count">79</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1847,7 +1851,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1858,7 +1862,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

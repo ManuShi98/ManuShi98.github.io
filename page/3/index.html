@@ -305,6 +305,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/07/06/HDU%20-%202196%20Computer(%E6%A0%91%E5%BD%A2dp)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/06/HDU%20-%202196%20Computer(%E6%A0%91%E5%BD%A2dp)/" itemprop="url">HDU - 2196 Computer(树形dp)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-06T12:39:25+08:00">
+                2018-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A0%91%E5%BD%A2dp/" itemprop="url" rel="index">
+                    <span itemprop="name">树形dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>基础树形dp，但看了题解才做出来。。<br>树形dp有两种基本形式：从根到叶子，从叶子到根。本题稍微有点特别，需要进行两次dfs才能完成整个dp。<br>我们定义一个dp数组dp[MAXN][3]。dp[i][0]记录的是节点i子树中所有节点到子树根节点i的最大距离，dp[i][1]记录的是节点i往根方向的最大距离，dp[i][2]记录的是节点i子树中所有点的到子树根节点i的次大距离。为什么要这样设计dp状态？如果我们将i节点设为根节点，我们能发现原来父亲节点也变成了一棵子树。但我们不能对每个节点都dfs一次，所以我们考虑使用一个dp[i][1]从顶向下来计算父亲节点这棵子树的距离最大值，dp[i][0],dp[i][2]的作用在后文中会写到。<br>对于dp[i][0]，dp[i][2]我们在第一次dfs中就计算出来，注意我们要记录一个一个点最长距离走的是哪个儿子longest[i],这个值在后面会用到。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> fa)</span></span>&#123;</span><br><span class="line">    dp[u][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[u];~i;i=nxt[i])&#123;</span><br><span class="line">        <span class="keyword">int</span> go=to[i];</span><br><span class="line">        <span class="keyword">if</span>(go==fa)<span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">int</span> temp=<span class="built_in">dfs1</span>(go,u)+len[i];</span><br><span class="line">        <span class="keyword">if</span>(temp&gt;dp[u][<span class="number">0</span>])&#123;</span><br><span class="line">            dp[u][<span class="number">2</span>]=dp[u][<span class="number">0</span>];</span><br><span class="line">            dp[u][<span class="number">0</span>]=temp;</span><br><span class="line">            islongest[u]=go;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(temp&gt;dp[u][<span class="number">1</span>])&#123;</span><br><span class="line">            dp[u][<span class="number">1</span>]=temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[u][<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在第二次dfs中我们计算dp[i][1]。我们在父亲节点时计算儿子节点的dp[son][1]而不是dfs进入儿子后计算。然后分类讨论</p>
+<ol>
+<li>对于不是longest的儿子节点，我们显然知道往根方向的最大值是儿子节点到当前节点的距离+当前节点中儿子的最大值和dp[i][1]中的较大值</li>
+<li>是longest的儿子节点，往根方向的最大值是儿子节点到当前节点的距离+dp[i][2]和dp[i][1]中的较大值(注意此时原来所有儿子中的最大值已经不能使用了，因为这个最大值包含在dp[son][0]中，此时只能选择次大值)</li>
+</ol>
+<p>最后遍历所有节点取max(dp[i][0],dp[i][1])即可</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/06/HDU%20-%202196%20Computer(%E6%A0%91%E5%BD%A2dp)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/07/04/CodeForces%20Gym%20-%20100803G%20Flipping%20Parentheses(%E7%BA%BF%E6%AE%B5%E6%A0%91)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1620,152 +1773,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/04/03/CodeForces%20-%20864E%20Fire(dp)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/03/CodeForces%20-%20864E%20Fire(dp)/" itemprop="url">CodeForces - 864E Fire(dp)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-03T08:40:50+08:00">
-                2018-04-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index">
-                    <span itemprop="name">动态规划</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>01背包dp，需要注意的是物品过了d[i]秒后就会焚毁，这使得背包的选取顺序影响了dp的更新。这是为什么呢？考虑我们背包的过程，我们为了避免选取顺序的影响强制给了背包一个顺序，而由于我们先放了a大小的，后面b大小只要空间足够的肯定能放，反之亦然。也就是说背包的选取顺序对dp的更新没有影响。但是这里因为物品焚毁，如果我们先放了a大小的结果发现b已经焚毁了就没法更新状态了，但实际上我们能把先焚毁的b放进去来更新状态，所以我们将d排序后再跑背包dp，这样保证了先焚毁的能更新后焚毁的物品的状态。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/03/CodeForces%20-%20864E%20Fire(dp)/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1818,7 +1825,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">78</span>
+                  <span class="site-state-item-count">79</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1829,7 +1836,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1840,7 +1847,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
