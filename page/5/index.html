@@ -305,6 +305,310 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/02/28/UVA%20-%2010534%20Wavio%20Sequence/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/28/UVA%20-%2010534%20Wavio%20Sequence/" itemprop="url">UVA - 10534 Wavio Sequence</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T22:25:06-08:00">
+                2018-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LIS/" itemprop="url" rel="index">
+                    <span itemprop="name">LIS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>LIS变形，本来想O(n^2)暴力踩10^8结果TLE的悲伤故事，所以学习了一下O(nlogn)的LIS求法。<br>对于最朴素的做法我们使用dp在n^2时间可以求出一个数列的LIS，程序如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> dp[MAXN],maxs=<span class="number">-1</span>;</span><br><span class="line"><span class="built_in">memset</span>(dp,<span class="number">1</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dp));   <span class="comment">//假装可以这么写</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(dp[i]&gt;dp[j])dp[i]=<span class="built_in">max</span>(dp[i],dp[j]+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    maxs=<span class="built_in">max</span>(dp[i],maxs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然而我们还有更机智的做法。考虑维护一个单调增的数列q[MAXN],令一个计数器cnt=0，我们从头扫到尾，然后会有两种情况:</p>
+<ol>
+<li>!cnt||a[i]&gt;q[cnt-1],那我们直接在数列尾部加上a[i]，得到的数列就是当前最大公共子序列</li>
+<li>不然我们能得到a[i]小于等于q数组最后一个元素。我们在这里对q进行二分查找，找到第一个大于等于a[i]的数然后**将该位置的数替换为a[i]**。</li>
+</ol>
+<p>这样就能nlogn求出数列的LIS，我们维护1-i的递增子序列长度和i-n的递减子序列长度然后处理即可。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/28/UVA%20-%2010534%20Wavio%20Sequence/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/02/24/CodeForces%20-%20665E%20Beautiful%20Subarrays/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/24/CodeForces%20-%20665E%20Beautiful%20Subarrays/" itemprop="url">CodeForces - 665E Beautiful Subarrays</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-24T04:40:17-08:00">
+                2018-02-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%97%E5%85%B8%E6%A0%91/" itemprop="url" rel="index">
+                    <span itemprop="name">字典树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>考虑将区间异或转换，我们处理一个异或前缀和数组，我们能够发现通过前缀和数组原来i-j的区间异或变成了pre[j]^pre[i-1]。然后我们逐个插入前缀和pre[i]，再由高到低逐个枚举k的二进制位:</p>
+<ul>
+<li>当k的第i位为1：显然我们要找一个使pre[i]异或后为1的数才能保证比k-1大。</li>
+<li>当k的第i位为0：如果我们找到一个使pre[i]异或后为1的数，那么异或后的数肯定比k-1大，我们直接在ans中加上这种数的个数（所以节点上要维护一个val次数数组），然后异或为1的不再考虑，我们进入异或后该位为0的节点。</li>
+</ul>
+<p>对每个前缀和的答案累加就是最后的答案。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/24/CodeForces%20-%20665E%20Beautiful%20Subarrays/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/02/20/BZOJ%20-%203224%20Tyvj%201728%20%E6%99%AE%E9%80%9A%E5%B9%B3%E8%A1%A1%E6%A0%91%20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -336,7 +640,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-20T19:59:08+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-20T03:59:08-08:00">
                 2018-02-20
               </time>
             
@@ -482,7 +786,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T21:24:30+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T05:24:30-08:00">
                 2018-02-18
               </time>
             
@@ -599,7 +903,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/02/14/HDU%20-%204757%20Tree/">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/02/13/HDU%20-%204757%20Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -618,7 +922,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/14/HDU%20-%204757%20Tree/" itemprop="url">HDU - 4757 Tree</a></h1>
+                <a class="post-title-link" href="/2018/02/13/HDU%20-%204757%20Tree/" itemprop="url">HDU - 4757 Tree</a></h1>
         
 
         <div class="post-meta">
@@ -630,8 +934,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-14T12:41:22+08:00">
-                2018-02-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T20:41:22-08:00">
+                2018-02-13
               </time>
             
 
@@ -694,7 +998,7 @@
           <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>可持久化trie树和主席树的构造类似。这题与之前主席树不同的地方就是在树上建树，类似spoj cot那题。对第n个节点，我们维护根-n这条链上的字典树。然后求x-y路径上的异或最大值时我们用x上的字典树+y上的字典树-两倍lca的父亲的字典树（因为根到lca父亲的字典树加了两遍），然后就是对常规的01字典树的考察。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/14/HDU%20-%204757%20Tree/#more" rel="contents">
+            <a class="btn" href="/2018/02/13/HDU%20-%204757%20Tree/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -776,7 +1080,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-04T16:56:39+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-04T00:56:39-08:00">
                 2018-02-04
               </time>
             
@@ -891,7 +1195,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/02/01/Codeforces%20Round%20#460%20(Div.%202)/">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/01/31/Codeforces%20Round%20#460%20(Div.%202)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -910,7 +1214,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/01/Codeforces%20Round%20#460%20(Div.%202)/" itemprop="url">Codeforces Round 460 (Div. 2)</a></h1>
+                <a class="post-title-link" href="/2018/01/31/Codeforces%20Round%20#460%20(Div.%202)/" itemprop="url">Codeforces Round 460 (Div. 2)</a></h1>
         
 
         <div class="post-meta">
@@ -922,8 +1226,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-01T14:47:09+08:00">
-                2018-02-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-31T22:47:09-08:00">
+                2018-01-31
               </time>
             
 
@@ -986,7 +1290,7 @@
           <p>终于蓝名。。<br><img src="https://i.loli.net/2020/12/14/9EOcjuk8DJFw7e3.jpg" alt="first_blue"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/01/Codeforces%20Round%20#460%20(Div.%202)/#more" rel="contents">
+            <a class="btn" href="/2018/01/31/Codeforces%20Round%20#460%20(Div.%202)/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1068,7 +1372,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-30T17:35:48+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-30T01:35:48-08:00">
                 2018-01-30
               </time>
             
@@ -1183,7 +1487,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/01/29/POJ%20-%201860%20Currency%20Exchange/">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/01/28/POJ%20-%201860%20Currency%20Exchange/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -1202,7 +1506,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/29/POJ%20-%201860%20Currency%20Exchange/" itemprop="url">POJ - 1860 Currency Exchange</a></h1>
+                <a class="post-title-link" href="/2018/01/28/POJ%20-%201860%20Currency%20Exchange/" itemprop="url">POJ - 1860 Currency Exchange</a></h1>
         
 
         <div class="post-meta">
@@ -1214,8 +1518,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-29T10:31:24+08:00">
-                2018-01-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T18:31:24-08:00">
+                2018-01-28
               </time>
             
 
@@ -1278,7 +1582,7 @@
           <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>因为要最后钱变多，那么要么存在一个包含s的环，绕一圈后钱变多，要么是通过不断绕正环增加自己的钱。所以本题我们需要找正环。类比Bellman-ford找负环计算即可，不同在于初始dist数组为0。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/29/POJ%20-%201860%20Currency%20Exchange/#more" rel="contents">
+            <a class="btn" href="/2018/01/28/POJ%20-%201860%20Currency%20Exchange/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1360,7 +1664,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-26T21:06:57+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-26T05:06:57-08:00">
                 2018-01-26
               </time>
             
@@ -1462,303 +1766,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/01/22/HDU%20-%203949%20XOR/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/22/HDU%20-%203949%20XOR/" itemprop="url">HDU - 3949 XOR</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-22T20:41:02+08:00">
-                2018-01-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BA%BF%E6%80%A7%E5%9F%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">线性基</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>线性基模板题</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/22/HDU%20-%203949%20XOR/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/01/21/HDU%20-%206185%20Covering/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/21/HDU%20-%206185%20Covering/" itemprop="url">HDU - 6185 Covering</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-21T16:06:42+08:00">
-                2018-01-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/" itemprop="url" rel="index">
-                    <span itemprop="name">矩阵快速幂</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>类似插头dp的题，但数据范围到了10^18次。我们发现他的宽度只有4，若我们令a[n]为方案数，b[n]为不可分割的矩阵数，通过打表我们能发现a[1]=b[1]=1，b[2]=4，且n&gt;=3时有：<br>当n为奇数时：b[n]=2<br>当n为偶数时：b[n]=3<br>我的理解是更多分割的方案在之前已经有过计算，所以只有把原有的矩阵拉长的方案没有计算过，我们使用递推式计算就是要使用这一部分。<br>最后计算可得a[n]=a[n-1]+5a[n-2]+a[n-3]-a[n-4]，然后使用矩阵快速幂。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/21/HDU%20-%206185%20Covering/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
  <nav class="pagination">
-   <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
+   <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
  </nav>
 
           </div>
@@ -1806,7 +1818,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">79</span>
+                  <span class="site-state-item-count">81</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1817,7 +1829,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1828,7 +1840,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1895,7 +1907,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -2395,6 +2407,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

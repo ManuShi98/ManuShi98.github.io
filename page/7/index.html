@@ -305,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/11/13/BZOJ%20-%202038%20%E5%B0%8FZ%E7%9A%84%E8%A2%9C%E5%AD%90/">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/11/19/LightOJ%20-%201422%20Halloween%20Costumes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -324,7 +324,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/13/BZOJ%20-%202038%20%E5%B0%8FZ%E7%9A%84%E8%A2%9C%E5%AD%90/" itemprop="url">BZOJ - 2038 小Z的袜子</a></h1>
+                <a class="post-title-link" href="/2017/11/19/LightOJ%20-%201422%20Halloween%20Costumes/" itemprop="url">LightOJ - 1422 Halloween Costumes</a></h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,300 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-13T13:50:47+08:00">
-                2017-11-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-19T20:39:22-08:00">
+                2017-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8C%BA%E9%97%B4dp/" itemprop="url" rel="index">
+                    <span itemprop="name">区间dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意是一个人要参加不同的晚会需要穿不同的衣服，衣服可以意见套一件然后再反序脱掉，问最少需要多少件衣服。容易想到使用区间dp。一开始想的状态转移方程是当两端不匹配时，dp[l][r]=min(dp[l+1][r],dp[l][r-1])+1。当两端匹配时，dp[l][r]=dp[l+1][r-1]+1。一开始还觉得没问题，结果得了WA。发现不能只考虑两端的复用，要考虑第一件衣服和中间某件（假设为k）的复用，因为有可能在中间复用会使得dp[l][r]更小。<br>状态转移方程:<br>对于两端不匹配的情况:dp[l][r]=min(dp[l+1][r],dp[l][r-1])+1;<br>对于l-r范围中我们枚举k，如果cloth[l]==cloth[k]，代表我们考虑中间第k件复用:dp[l][r]=min(dp[l][r],dp[l][k-1]+dp[k+1][r]);</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/19/LightOJ%20-%201422%20Halloween%20Costumes/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/11/17/POJ%20-%203167%20Cow%20Patterns/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/17/POJ%20-%203167%20Cow%20Patterns/" itemprop="url">POJ - 3167 Cow Patterns</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-17T23:09:07-08:00">
+                2017-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/KMP/" itemprop="url" rel="index">
+                    <span itemprop="name">KMP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>一道非常好的kmp题。如果我们想要使用kmp的话，模式串一定要是固定的才行，而本题中，我们是要找一个排名串。这一就要用到一个结论：两个排名串相等，当且仅当对于两个排名串其中相同位置的数，他俩之前比他俩小的数字个数相等而且小于等于他俩的数字个数也相等。这样就转化为了固定的模式串的问题。然后我们需要修改makenext这个函数和kmp的匹配函数，因为其中有动态的增加减少，比如我们失配的时候，我们需要减掉一部分不必要的数字前缀（见代码）。为了取得比一个数小的个数和小于等于他的数，我们使用树状数组（也可以枚举）。题意给了数字最大不超过30，我们开一个BIT[30],然后维护这个树状数组。最后的问题就是POJ的g++似乎对cin，cout很不友好啊？我用c++得了ac，用g++居然TLE???真是玄学。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/17/POJ%20-%203167%20Cow%20Patterns/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/11/12/BZOJ%20-%202038%20%E5%B0%8FZ%E7%9A%84%E8%A2%9C%E5%AD%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/12/BZOJ%20-%202038%20%E5%B0%8FZ%E7%9A%84%E8%A2%9C%E5%AD%90/" itemprop="url">BZOJ - 2038 小Z的袜子</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-12T21:50:47-08:00">
+                2017-11-12
               </time>
             
 
@@ -405,7 +697,7 @@
 <h4 id="本题思路"><a href="#本题思路" class="headerlink" title="本题思路"></a>本题思路</h4><p>莫队模板题。令当前可选的袜子为ans<br>ans=(color[i]*(color[i]-1)/2);<br>化简得到ans=(Σ(sum(color[i])2)−(R−L+1))/((R−L+1)∗(R−L))<br>所以更新为ans=ans-ci^2+(ci+1)^2</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/11/13/BZOJ%20-%202038%20%E5%B0%8FZ%E7%9A%84%E8%A2%9C%E5%AD%90/#more" rel="contents">
+            <a class="btn" href="/2017/11/12/BZOJ%20-%202038%20%E5%B0%8FZ%E7%9A%84%E8%A2%9C%E5%AD%90/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -456,7 +748,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/11/10/POJ%20-%201743%20Musical%20Theme(%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%8F%A0%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E4%B8%B2)/">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/11/09/POJ%20-%201743%20Musical%20Theme(%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%8F%A0%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E4%B8%B2)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -475,7 +767,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/10/POJ%20-%201743%20Musical%20Theme(%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%8F%A0%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E4%B8%B2)/" itemprop="url">POJ - 1743 Musical Theme(不可重叠最长重复子串)</a></h1>
+                <a class="post-title-link" href="/2017/11/09/POJ%20-%201743%20Musical%20Theme(%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%8F%A0%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E4%B8%B2)/" itemprop="url">POJ - 1743 Musical Theme(不可重叠最长重复子串)</a></h1>
         
 
         <div class="post-meta">
@@ -487,8 +779,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-10T11:58:21+08:00">
-                2017-11-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-09T19:58:21-08:00">
+                2017-11-09
               </time>
             
 
@@ -551,7 +843,7 @@
           <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题是后缀数组一个常见的应用，不可重叠最长重复子串。后缀数组的基本知识参考<a href="https://manushi98.github.io/post/978515b9.html">SPOJ - SUBST1 New Distinct Substrings</a>一文。对于一个不可重叠最长子串的问题，我们首先对长度二分答案，然后对height数组分段，连续的height值&gt;=k的我们分在一起，然后记录段内sa的最小值和最大值，如果两者的差大于等于k+1（题意要求重复子串之间要有一个字符的间隔）那么现在的k就是符合条件的。需要注意的是这道题卡了cin,cout。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/11/10/POJ%20-%201743%20Musical%20Theme(%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%8F%A0%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E4%B8%B2)/#more" rel="contents">
+            <a class="btn" href="/2017/11/09/POJ%20-%201743%20Musical%20Theme(%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%8F%A0%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E4%B8%B2)/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -633,7 +925,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-08T21:17:21+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-08T05:17:21-08:00">
                 2017-11-08
               </time>
             
@@ -795,7 +1087,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-06T22:32:16+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-06T06:32:16-08:00">
                 2017-11-06
               </time>
             
@@ -948,7 +1240,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-01T23:13:30+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-01T08:13:30-07:00">
                 2017-11-01
               </time>
             
@@ -1095,7 +1387,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-18T16:29:09+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-18T01:29:09-07:00">
                 2017-10-18
               </time>
             
@@ -1245,7 +1537,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-15T22:38:00+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-15T07:38:00-07:00">
                 2017-10-15
               </time>
             
@@ -1363,7 +1655,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/10/14/HDU%20-%203555%20Bomb/">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/10/13/HDU%20-%203555%20Bomb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -1382,7 +1674,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/14/HDU%20-%203555%20Bomb/" itemprop="url">HDU - 3555 Bomb</a></h1>
+                <a class="post-title-link" href="/2017/10/13/HDU%20-%203555%20Bomb/" itemprop="url">HDU - 3555 Bomb</a></h1>
         
 
         <div class="post-meta">
@@ -1394,8 +1686,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-14T08:53:22+08:00">
-                2017-10-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-13T17:53:22-07:00">
+                2017-10-13
               </time>
             
 
@@ -1458,299 +1750,7 @@
           <p><em>思路</em><br>现在发现自己的dp实在是烂，决定把kuangbin专题下的dp都刷一遍。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/14/HDU%20-%203555%20Bomb/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/10/13/HDU-2089%20%E4%B8%8D%E8%A6%8162/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/13/HDU-2089%20%E4%B8%8D%E8%A6%8162/" itemprop="url">HDU-2089 不要62</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-13T17:18:00+08:00">
-                2017-10-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E4%BD%8Ddp/" itemprop="url" rel="index">
-                    <span itemprop="name">数位dp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><em>思路：</em><br>数位dp的入门题，主要是为了对数位dp有一个初步的认识。我一开始认为数位dp是对左右区间进行dp，不过在看了几篇博客后认识到了应当对当前位以i为第一位的数作为状态来dp。递推式还是比较简单的。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/13/HDU-2089%20%E4%B8%8D%E8%A6%8162/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/10/13/HDU%20%E2%80%93%202222%20Keywords%20Search/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/13/HDU%20%E2%80%93%202222%20Keywords%20Search/" itemprop="url">HDU – 2222 Keywords Search</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-13T17:17:59+08:00">
-                2017-10-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">AC自动机</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><em>思路：</em><br>AC自动机模板题。AC自动机是在一个字符串中查找多个特征串的算法。其中使用了一个next数组和Trie树，与kmp的next数组相类似。思想就是当指向的节点不匹配时，退回上一个匹配的节点，然后在其fail节点中继续查找这个串。（可以理解为两个特征串相同的前后缀然后直接跳转）构造fail指针的时候，需要查找其父节点的fail然后查其儿子节点。利用BFS完成。在扫描的时候，需要对已经扫过的节点标记为-1，避免重复计算。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/13/HDU%20%E2%80%93%202222%20Keywords%20Search/#more" rel="contents">
+            <a class="btn" href="/2017/10/13/HDU%20-%203555%20Bomb/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1792,7 +1792,7 @@
 
   
  <nav class="pagination">
-   <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
+   <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
  </nav>
 
           </div>
@@ -1840,7 +1840,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">79</span>
+                  <span class="site-state-item-count">81</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1851,7 +1851,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1862,7 +1862,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1929,7 +1929,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -2429,6 +2429,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
