@@ -2442,35 +2442,6 @@
       </tags>
   </entry>
   <entry>
-    <title>投资操作总结</title>
-    <url>/2022/05/30/p/</url>
-    <content><![CDATA[<p>完善交易系统，不断进化。</p>
-<span id="more"></span>
-
-<h1 id="交易系统的部分总结"><a href="#交易系统的部分总结" class="headerlink" title="交易系统的部分总结"></a>交易系统的部分总结</h1><ol>
-<li>节假日前1-2周，关注消费/旅游/酒店。但是保证空仓过节</li>
-<li>做快进快出的交易时，不选择基金重仓股</li>
-</ol>
-<h1 id="2022-05-30"><a href="#2022-05-30" class="headerlink" title="2022-05-30"></a>2022-05-30</h1><h2 id="买入"><a href="#买入" class="headerlink" title="买入"></a>买入</h2><p>逆回购（1日） 利率1.89 到期收益0.62</p>
-<h2 id="卖出"><a href="#卖出" class="headerlink" title="卖出"></a>卖出</h2><p>李子园 25.3 （24.05-&gt;25.30 总获利602.11)</p>
-<h2 id="总结反思"><a href="#总结反思" class="headerlink" title="总结反思"></a>总结反思</h2><p>我在26日买入李子园。26日左右国家宣布投入大量资金支持疫情后复苏，同时6.1日上海解封。考虑到立刻到达的端午假期，潜在的反弹点包括：</p>
-<ul>
-<li>消费（李子园增长6%，消费etf增长4.5%）</li>
-<li>旅游（锦江酒店5/25-5/30共涨幅13%,旅游etf增长8%）</li>
-<li>餐饮</li>
-</ul>
-<p>在开始时我对于旅游是有所顾虑的，考虑到上海即便解封了也未必能够增加端午节的客流量，我倾向于旅游的预期并不会很高。但是考虑到放开后，较多人应当会有消费需求，包括囤货的需求，精神放松的需求（饮料等），所以我认为消费拥有确定性的机会并选择在低点买入。我选择李子园的主要原因是其具有较好的股性，根据以往的观察，在拥有利好消息时有很多活跃资金进入流出。与之相反的是我之前选择的福耀玻璃。在公布了汽车下乡计划后，玻璃作为汽车稳定的配件，并没有根据消息面进行涨跌。我的理解是福耀玻璃作为基金重仓股，其流动筹码非常有限，而散户主导的股票往往交易分散，走势不成气候。当然福耀玻璃是一支值得长期持有的股票，但是绝对不适合快进快出。</p>
-<p><img src="https://s2.loli.net/2022/05/31/78Wnlvm3DwTf5tH.jpg" alt="WechatIMG175.jpeg"></p>
-<p>今天操作比较大的失误是在主力抛售时的低点卖出了筹码。最大的原因还是止损判断失误，认为下跌趋势已成。但是股票的下跌趋势往往不是一根直线。往后止损应当根据连续的两波下跌趋势作为基准。</p>
-]]></content>
-      <categories>
-        <category>投资</category>
-      </categories>
-      <tags>
-        <tag>投资</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iris学习笔记</title>
     <url>/2022/05/10/iris%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="Main"><a href="#Main" class="headerlink" title="Main"></a>Main</h1><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;main/router_Controller&quot;</span></span><br><span class="line"></span><br><span class="line">	<span class="string">&quot;github.com/kataras/iris/v12&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="comment">// Get context</span></span><br><span class="line">	app := iris.Default()</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Integrate router into one controller</span></span><br><span class="line">	router_Controller.Hub(app)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Listens and serves incoming http requests</span></span><br><span class="line">	<span class="comment">// on http://localhost:8080.</span></span><br><span class="line">	app.Listen(<span class="string">&quot;:8988&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
