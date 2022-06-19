@@ -305,6 +305,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/03/16/HDU%20-%203853%20LOOPS(%E6%A6%82%E7%8E%87dp)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/16/HDU%20-%203853%20LOOPS(%E6%A6%82%E7%8E%87dp)/" itemprop="url">HDU - 3853 LOOPS(概率dp)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-16T00:48:04-07:00">
+                2018-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A6%82%E7%8E%87dp/" itemprop="url" rel="index">
+                    <span itemprop="name">概率dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>概率/期望dp。本题我们能通过全期望公式得到dp[i][j]=dp[i+1][j]*map[i][j][2]+dp[i][j+1]*map[i][j][1]+dp[i][j]*map[i][j][0]+2得到(2是消耗的能量）。由于dp要求无后效性，我们移项得到dp[i][j]=(dp[i+1][j]*map[i][j][2]+dp[i][j+1]*map[i][j][1]+2)/(1-map[i][j][0])。需要注意的是对于概率dp，我们通常正推，但期望dp我们通常反着推。就期望dp来说，正推最大的困难点在于一个点可能是直接转移过来的，但也有可能在原地停留后再转移，即转移概率需要另外计算，所以概率并不是简单的map[i][j][k]。对于本题来说正推计算后的公式实际上还能接受，但对像hdu4405这种题来说正推的转移太复杂了，所以我们考虑泛用性更好的反推。对于一个点X，显然有如下转移<br><img src="https://i.loli.net/2020/12/14/tXukgZoTeAs7dfH.jpg" alt="hdu-3853-1"><br>那我们显然地，通过这个转移从起点到终点的期望等于使用这个转移从终点到起点的期望。对于这个反推我们考虑从右下往左上推，注意，这个时候每个点的期望是从<strong>右边的点，下面的点和自己</strong>推来的，这意味着原来正推的时候该点左下角的点对该点下面的点的影响是没有的，所以可以放心的使用全期望公式。<br>总结一下，我们使用反推通常是因为我们可以很方便地知道一个点到下一个点的转移概率，这个概率在反推的时候是不用额外计算的。但正推就要考虑之前的点有没有通过多种方式转移到这个点，我们需要考虑转移的概率究竟是几。两相比较之下显然反推比较优秀。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/16/HDU%20-%203853%20LOOPS(%E6%A6%82%E7%8E%87dp)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/03/15/CodeForces%20-%20739B%20Alyona%20and%20a%20tree(%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86+%E4%BA%8C%E5%88%86)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1620,152 +1766,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/01/31/Codeforces%20Round%20#460%20(Div.%202)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/31/Codeforces%20Round%20#460%20(Div.%202)/" itemprop="url">Codeforces Round 460 (Div. 2)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-31T22:47:09-08:00">
-                2018-01-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CodeForces/" itemprop="url" rel="index">
-                    <span itemprop="name">CodeForces</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>终于蓝名。。<br><img src="https://i.loli.net/2020/12/14/9EOcjuk8DJFw7e3.jpg" alt="first_blue"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/31/Codeforces%20Round%20#460%20(Div.%202)/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1818,7 +1818,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

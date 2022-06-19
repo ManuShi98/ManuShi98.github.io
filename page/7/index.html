@@ -305,6 +305,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/12/17/2017%20EC-Final%20%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/17/2017%20EC-Final%20%E6%80%BB%E7%BB%93/" itemprop="url">2017 EC-Final 总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-17T05:18:47-08:00">
+                2017-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/" itemprop="url" rel="index">
+                    <span itemprop="name">比赛总结</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h3><p>热身赛两个队友考四六级去了，就我一个人调机子。。前一个多小时电脑无限连不上网，10多个志愿者一个一个过来让我刷新网页？热身赛的题目是google的kickstart的题，第四题比较简单，一个裸的最小生成树（分析选取过程可以发现是kruskal），然后b题感觉可以三分x再三分y？开始无限乱搞然后无限WA？就这样结束了热身赛，赛后听说三分和模拟退火都能过B，感觉自己裸写三分的能力非常捉急。。在座的各位大佬还是强，花式AK</p>
+<h3 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h3><p>现场赛三道水题，A开始队友想用Lucas结果TLE，然后我来搞发现N范围小可以发现把C(k,n)变成C(n-k,n)，然后使用组合数的递推公式让复杂度来到10^5*100，第一发因为有一个地方忘取模爆long long所以WA了，第二发过了。最后一道水题，判断票位于哪一轮比赛即可，不过我题读完没搞懂赛制？就让另一个队友再读了一遍（大锅，不怎么看世界杯不了解，重复读题有点浪费时间），读完后2发A了。K题陷入了三个人都读不懂题的困境？？？我到最后都没读懂，不过幸好队友脑袋清醒A了。然后我开始无脑推J，J的思路其实就是枚举起点终点然后对每个起点贪心判最近终点距离是不是&gt;=3。这题我推得实在是太慢了，封榜后才推出结论。然后第一发蜜汁TLE，改了个错A了，然后4题到结束。在后面的时间我猜了个C，结论跟正确的就差一点，我本来以为只需要考虑第一个红灯，之后的就都能绿灯了，交了猜想WA，然后队友跟我说让我枚举红灯，我：？？？，队友：？？？我俩交流出了问题，不然C题就A了。然后B题又没读懂。。队友很早就告诉了我D题的题意，我开始觉得能够枚举比例来打表，但后来考虑到存不下就没跟队友说，结果思路其实没问题。。E题大模拟我们没看，题目太长，而且需要的机时太长了。F题用了KMP的next思想，我看了题解才明白，这题是真的不会。G题LCA，没看。H题DP，我居然没看出来。。（大锅）I题似乎是三分，但我们队计算几何不是很好，比赛中没有看。L题推结论推到最后也没推出来。。<br><img src="https://i.loli.net/2020/12/14/hzRCONZPc4mDWG7.jpg" alt="Rank"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>要加强读题，比赛中两道题因为读题浪费了时间</li>
+<li>模的时候怎么总是忘了要所有地方都要取模啊？以后最后交的时候一定要检查一遍</li>
+<li>队友交流的时候最好举两个例子</li>
+<li>CCPC，ecfinal都反映出我dp巨烂无比，寒假把cf所有dp标签的题都刷一遍<br>就是这些吧，主要原因还是自己水平不够，知识点覆盖太少，接下来准备这两周不弄算法了，专心准备考试，然后寒假好好训练一下，就酱</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/12/11/CodeForces%20-%202B%20The%20least%20round%20way/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1635,153 +1784,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/11/01/UVA%20-%2010048%20Audiophobia/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/01/UVA%20-%2010048%20Audiophobia/" itemprop="url">UVA - 10048 Audiophobia</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-01T08:13:30-07:00">
-                2017-11-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" itemprop="url" rel="index">
-                    <span itemprop="name">最小生成树</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h4 id="最小瓶颈路"><a href="#最小瓶颈路" class="headerlink" title="最小瓶颈路"></a>最小瓶颈路</h4><p>给定两个点u,v求两点间路径上最大边权最小，这就是最小瓶颈路问题。</p>
-<h4 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h4><p>对于最小瓶颈路，我们通常有两种解法：</p>
-<ol>
-<li>Floyd<br>通过将原先dp[i][j]=max(dp[i][j],dp[i][k]+dp[k][j])改为dp[i][j]=min(dp[i][j],max(dp[i][k],dp[k][j]))来计算，复杂度O(n^3)</li>
-<li>最小生成树<br>通过观察Kruskal算法的过程我们显然能够发现最小瓶颈路在最小生成树上。对于单点查询dfs就可解决问题。如果多次查询可以使用类似Floyd的处理。对于本题，我们可以离线询问，然后每次判断询问的两点是否已经相连，如果相连那么现在加入的边就是我们要求的边。<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 1e9</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ms(a,val) memset(a,val,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson(x) (x&lt;&lt;1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson(x) (x&lt;&lt;1+1)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> c, s, q;</span><br><span class="line"><span class="keyword">int</span> fa[<span class="number">105</span>], ranks[<span class="number">105</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> u, v, val;</span><br><span class="line">	<span class="built_in">edge</span>() &#123;&#125;;</span><br><span class="line">	<span class="built_in">edge</span>(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> val) :<span class="built_in">u</span>(u), <span class="built_in">v</span>(v), <span class="built_in">val</span>(val) &#123;&#125;;</span><br><span class="line">&#125;E[<span class="number">1005</span>];</span><br><span class="line"><span class="comment">//vector&lt;pair&lt;int,int&gt;&gt; G[105];</span></span><br><span class="line">vector&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; qu;</span><br><span class="line">map&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;, <span class="keyword">int</span>&gt; dict;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(edge e1, edge e2)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> e1.val &lt; e2.val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init_union</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;= c;i++) &#123;</span><br><span class="line">		fa[i] = i, ranks[i] = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getfa</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (fa[x] == x)<span class="keyword">return</span> x;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> fa[x] = <span class="built_in">getfa</span>(fa[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">same</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">getfa</span>(i) == <span class="built_in">getfa</span>(j);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">unite</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="built_in">getfa</span>(i), b = <span class="built_in">getfa</span>(j);</span><br><span class="line">	<span class="keyword">if</span> (a == b)<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (ranks[a] &lt; ranks[b]) &#123;</span><br><span class="line">			fa[a] = b;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			fa[b] = a;</span><br><span class="line">			<span class="keyword">if</span> (ranks[a] == ranks[b])ranks[a]++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">kruskal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">init_union</span>();</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">sort</span>(E, E + s, cmp);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; s;i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (!<span class="built_in">same</span>(E[i].u, E[i].v)) &#123;</span><br><span class="line">			ans += E[i].val;</span><br><span class="line">			<span class="built_in">unite</span>(E[i].u, E[i].v);</span><br><span class="line">			<span class="comment">//G[E[i].u].push_back(make_pair(E[i].v, E[i].val)), G[E[i].v].push_back(make_pair(E[i].u, E[i].val));</span></span><br><span class="line">			<span class="keyword">for</span> (map&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;, <span class="keyword">int</span>&gt;::iterator it = dict.<span class="built_in">begin</span>();it != dict.<span class="built_in">end</span>();it++) &#123;</span><br><span class="line">				<span class="keyword">int</span> fi = it-&gt;first.first, se = it-&gt;first.second;</span><br><span class="line">				<span class="keyword">if</span> (<span class="built_in">same</span>(fi, se) &amp;&amp; !it-&gt;second)it-&gt;second = E[i].val;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*void dfs(int index) &#123;</span></span><br><span class="line"><span class="comment">	vis[index] = 1;</span></span><br><span class="line"><span class="comment">	for (vector&lt;pair&lt;int,int&gt;&gt;::iterator it = G[index].begin();it != G[index].end();it++) &#123;</span></span><br><span class="line"><span class="comment">		int to = it-&gt;first;</span></span><br><span class="line"><span class="comment">		if (!vis[to]) &#123;</span></span><br><span class="line"><span class="comment">			for (int i = 1;i &lt;= c;i++) &#123;</span></span><br><span class="line"><span class="comment">				if (vis[i]) &#123;</span></span><br><span class="line"><span class="comment">					dp[i][to] = dp[to][i] = max(dp[i][index], it-&gt;second);</span></span><br><span class="line"><span class="comment">				&#125;</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment">			dfs(to);</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>), cin.<span class="built_in">tie</span>(<span class="number">0</span>), cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">int</span> u, v, val,cal=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (cin &gt;&gt; c &gt;&gt; s &gt;&gt; q) &#123;</span><br><span class="line">		<span class="keyword">if</span> (c == <span class="number">0</span> &amp;&amp; s == <span class="number">0</span> &amp;&amp; q == <span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">int</span> i;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; s;i++) &#123;</span><br><span class="line">			cin &gt;&gt; u &gt;&gt; v &gt;&gt; val;</span><br><span class="line">			<span class="function">edge <span class="title">e</span><span class="params">(u, v, val)</span></span>;</span><br><span class="line">			E[i] = e;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; q;i++) &#123;</span><br><span class="line">			cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">			qu.<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(u, v));</span><br><span class="line">			dict[<span class="built_in">make_pair</span>(u, v)] = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">kruskal</span>();</span><br><span class="line">		<span class="keyword">if</span> (cal)cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;Case #&quot;</span> &lt;&lt; cal + <span class="number">1</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		<span class="keyword">for</span> (vector&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt;::iterator it = qu.<span class="built_in">begin</span>();it != qu.<span class="built_in">end</span>();it++) &#123;</span><br><span class="line">			<span class="keyword">int</span> ans = dict[*it];</span><br><span class="line">			<span class="keyword">if</span> (!ans)cout &lt;&lt; <span class="string">&quot;no path\n&quot;</span>;</span><br><span class="line">			<span class="keyword">else</span> cout &lt;&lt; ans &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cal++;</span><br><span class="line">		qu.<span class="built_in">clear</span>(),dict.<span class="built_in">clear</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1834,7 +1836,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
