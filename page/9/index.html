@@ -305,6 +305,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/10/13/POJ%20%E2%80%93%202352%20Stars/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/13/POJ%20%E2%80%93%202352%20Stars/" itemprop="url">POJ – 2352 Stars</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-13T02:17:31-07:00">
+                2017-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" itemprop="url" rel="index">
+                    <span itemprop="name">树状数组</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><em>思路：</em><br>说来惭愧，看到这道题的第一反应是一个二维的树状数组（因为题没读完）。在读二维树状数组的资料时恰好看到了别人的资料，发现读入数据是按照y坐标的递增序读入的。那么对于y的考虑显然是不必要的，所以只需要一维就能够完成这道题。这道题使用y递增序化二维问题为一维问题似乎是个不错的解题思路？然后由于是第一次手写BIT的板子，在这里稍微做一些笔记吧。</p>
+<p><img src="https://i.loli.net/2020/12/14/toecQj2qKE83Ji6.jpg" alt="BIT"><br>在白书上对于树状数组提供的功能有两个：<br><em>1.给定位置，计算前缀和</em></p>
+<p>通过上图的二进制我们能够发现为了求到n的区间和，我们可以通过不断去掉末尾的1（即lowbit）然后对BIT[n]求和的方法来计算前缀和。那么怎么理解这个过程？我的理解是在建立树状数组的时候我们可以把每个部分看成一个小的树状数组。很显然应该能够理解类似100这样的二进制数在维护一个大区间，然后对于后面的两个0位，我们通过添加一个1（对于两个0位每添加一个1就是一个新区间，不能添加两个，不然就跑到7去了，可以对照着图理解）构成了一个小的树状数组的空间（101，110），通过这样不断递归的定义最终完成了整个树状数组。所以在回过头去求的时候我们就要去掉末尾的1返回到前面那个区间。<br><em>2.给定位置的变化量，更新维护的前缀和</em><br>根据上面的介绍，不难理解对于形如1xxx（x为0或者1）的数都处于一个类似小树状数组的空间中，通过左移1可以在同一个树状数组中逐层向上，所以而1xxx又处在10000（即多一位）的区间中，所以显然是可以这样更新的。</p>
+<p>树状数组通常用来求解逆序对以及前缀和询问。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/13/POJ%20%E2%80%93%202352%20Stars/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/10/13/POJ%20%E2%80%93%202299%20Ultra-QuickSort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1079,7 +1228,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">86</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1090,7 +1239,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1101,7 +1250,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
