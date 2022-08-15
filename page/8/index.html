@@ -305,6 +305,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/11/08/POJ%20-%201330%20Nearest%20Common%20Ancestors(%E5%80%8D%E5%A2%9ELCA)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/08/POJ%20-%201330%20Nearest%20Common%20Ancestors(%E5%80%8D%E5%A2%9ELCA)/" itemprop="url">POJ - 1330 Nearest Common Ancestors(倍增LCA)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-08T05:17:21-08:00">
+                2017-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LCA/" itemprop="url" rel="index">
+                    <span itemprop="name">LCA</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>在有根树中，我们称距离u和v所有公共祖先中距离最近的称为最近公共祖先(LCA)。<br><img src="https://i.loli.net/2020/12/14/uPVlqKyWm73dH5I.jpg" alt="LCA"><br>一个朴素的求u和v的LCA的想法是让u和v先深度相同，然后逐层向上直到碰到相同元素。复杂度为O(n)。虽然看着简单有效，但对多次查询来说这个复杂度十分不友好。<br>为了高效求解公共祖先，我们有三种方式：</p>
+<ul>
+<li>倍增法（在线，实现简单）</li>
+<li>RMQ（在线，实现复杂）</li>
+<li>Tarjan（离线）  </li>
+</ul>
+<p>本题我们使用倍增法求LCA。倍增法构造LCA预处理复杂度为O(nlogn),查询复杂度为O(logn)。<br>下面会涉及到的一些元素：</p>
+<ul>
+<li>parent[k][v]:距离v元素2^k距离的祖先</li>
+<li>depth[v]:v元素的深度  </li>
+</ul>
+<p>我们首先通过dfs(int v,int p,int d)初始化parent[0][v],depth[v],根的祖先为-1</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> v, <span class="keyword">int</span> p, <span class="keyword">int</span> d)</span> </span>&#123;</span><br><span class="line">	parents[<span class="number">0</span>][v] = p;</span><br><span class="line">	depth[v] = d;</span><br><span class="line">	<span class="keyword">for</span> (vector&lt;<span class="keyword">int</span>&gt;::iterator it = G[v].<span class="built_in">begin</span>();it != G[v].<span class="built_in">end</span>();it++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(*it!=p)<span class="built_in">dfs</span>(*it, v, d + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接着倍增初始化。外循环是倍增的k，内循环是节点，因为要先求出所有节点的parent[k][v]才能初始化k+1的情况（考虑parent[k+1][v]=parent[k][parent[k][v]])。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">dfs</span>(root, <span class="number">-1</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>;k + <span class="number">1</span> &lt; MAX_LOG_V;k++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> v = <span class="number">1</span>;v &lt;= n;v++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (parents[k][v] &lt; <span class="number">0</span>)parents[k + <span class="number">1</span>][v] = <span class="number">-1</span>;</span><br><span class="line">			<span class="keyword">else</span> parents[k + <span class="number">1</span>][v] = parents[k][parents[k][v]];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果我们用朴素的方法，令数组parent[k][v]为v的k祖先的话预处理时间复杂度会达到O(n^2)，所以是不可接受的。而倍增的话我们在初始化后先将u，v放到同一高度，然后可以进行类似二分搜索的方式。从MAX_LOG_V - 1开始，如果parent[k][v]!=parent[k][u]，那么就向上倍增，这样能保证往上后的节点还没到最近公共祖先，有点类似十进制数贪心变成二进制数的方式。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lca</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (depth[u] &gt; depth[v])<span class="built_in">swap</span>(u, v);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>;k &lt; MAX_LOG_V;k++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (((depth[v] - depth[u]) &gt;&gt; k) &amp; <span class="number">1</span>) &#123;</span><br><span class="line">			v = parents[k][v];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (u == v)<span class="keyword">return</span> u;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> k = MAX_LOG_V - <span class="number">1</span>;k &gt;= <span class="number">0</span>;k--) &#123;</span><br><span class="line">		<span class="keyword">if</span> (parents[k][u] != parents[k][v]) &#123;</span><br><span class="line">			u = parents[k][u];</span><br><span class="line">			v = parents[k][v];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> parents[<span class="number">0</span>][u];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/08/POJ%20-%201330%20Nearest%20Common%20Ancestors(%E5%80%8D%E5%A2%9ELCA)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/11/06/Codeforces%20Round%20444%20(Div.%202)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1625,152 +1787,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/10/13/POJ%20%E2%80%93%202387%20Til%20the%20Cows%20Come%20Home%EF%BC%88Dijkstra%E5%A0%86%E4%BC%98%E5%8C%96%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/13/POJ%20%E2%80%93%202387%20Til%20the%20Cows%20Come%20Home%EF%BC%88Dijkstra%E5%A0%86%E4%BC%98%E5%8C%96%EF%BC%89/" itemprop="url">POJ – 2387 Til the Cows Come Home（Dijkstra堆优化）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-13T02:17:32-07:00">
-                2017-10-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%80%E7%9F%AD%E8%B7%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">最短路</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><em>思路：</em><br>最短路的裸题，不过想尝试一下以前没用过的Dijkstra的堆优化。Dijkstra的思路简单的说就是找目前没有扫描过的，且到出发点最近的点。标记其为使用过后再更新其周围的点的最短路径。常规时间复杂度为O(|V|^2)。在算法中我们可以使用一个小顶堆维护当前的离出发点最近的点，避免了多余的扫描，使得复杂度变为O(|E|log|V|)。这题一眼扫过去是个裸题就直接做了，没看到题目说可以有重边。。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/13/POJ%20%E2%80%93%202387%20Til%20the%20Cows%20Come%20Home%EF%BC%88Dijkstra%E5%A0%86%E4%BC%98%E5%8C%96%EF%BC%89/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1823,7 +1839,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1834,7 +1850,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1845,7 +1861,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

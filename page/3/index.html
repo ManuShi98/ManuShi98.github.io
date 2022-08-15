@@ -305,6 +305,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/08/23/UVALive%20-%208488%20Suffix(%E4%BA%8C%E5%88%86+hash)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/23/UVALive%20-%208488%20Suffix(%E4%BA%8C%E5%88%86+hash)/" itemprop="url">UVALive - 8488 Suffix(二分+hash)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-23T01:32:27-07:00">
+                2018-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hash/" itemprop="url" rel="index">
+                    <span itemprop="name">Hash</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我们可以首先取最后一个字符串字典序最小的后缀，然后把它接到前一个串的后面，再求这个串字典序最小的后缀，不断重复以上操作我们就能得到题目需要的字符串。其正确性可以用反证法证明：假设我们最后一个字符串不取字典序最小的后缀，那么我们一定能通过替换最小的后缀来得到一个更小的字符串，与原串是字典序最小的字符串矛盾。但这样的时间复杂度是O(n^2)的(字符串比较O(n))，我们期望的是一个O(nlogn)的算法。注意到我们取的过程是从最后一个字符慢慢往前走，如果我们保存每个位置的hash值（这里hash的方法需要是Hash=Hash*seed+letter），然后通过现在的hash值减之前的hash值乘以偏移量，那么我们就能得到一段前缀的hash值，也就是可以O(1)的比较一段前缀是否相等。因此我们可以想到二分前缀的长度（显然具有单调性），通过上述hash的方法来得到两个字符串最长的LCP。知道了两个字符串最长的公共前缀后，我们只要比较最长公共前缀后面的第一个字符即可比较两个字符串的大小。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/23/UVALive%20-%208488%20Suffix(%E4%BA%8C%E5%88%86+hash)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/08/17/SGU%20-%20101%20Domino(%E6%AC%A7%E6%8B%89%E8%B7%AF%E5%BE%84)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1625,158 +1771,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/05/28/CodeForces%20Gym%20-%20101620F%20Faulty%20Factorial(%E7%AE%80%E5%8D%95%E6%95%B0%E8%AE%BA)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/28/CodeForces%20Gym%20-%20101620F%20Faulty%20Factorial(%E7%AE%80%E5%8D%95%E6%95%B0%E8%AE%BA)/" itemprop="url">CodeForces Gym - 101620F Faulty Factorial(简单数论)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-28T06:57:46-07:00">
-                2018-05-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index">
-                    <span itemprop="name">数论</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>分四种情况讨论，注意p保证是一个素数，这个条件非常关键。</p>
-<ol>
-<li>n&gt;=2p，如果r!=0显然无解，因为p，2p已经有两个p因子了，所以模p余数只能为0，r==0则我们随便输出一个合法的即可</li>
-<li>n&gt;p&amp;&amp;n&lt;2p，r==0则随意变换一个除p外的数，不然暴力枚举。</li>
-<li>n==p，r==0则若n==2无解，否则随意输出一个合法解。如果r!=0那么因为p是素数，我们由威尔逊定理(p-1)!同余于p=1得到最后的判定条件为(p-1)i%p==r然后进行暴力枚举</li>
-<li>n&lt;p，我们有1*2*…*n同余r（模p意义下），我们枚举i，对两边乘上1*2*…*n的逆元然后去掉i就是i位置该放的值，判定是否合法即可。</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/28/CodeForces%20Gym%20-%20101620F%20Faulty%20Factorial(%E7%AE%80%E5%8D%95%E6%95%B0%E8%AE%BA)/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1829,7 +1823,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1840,7 +1834,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1851,7 +1845,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
