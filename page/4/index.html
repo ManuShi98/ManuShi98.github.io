@@ -305,6 +305,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/07/04/CodeForces%20Gym%20-%20100803G%20Flipping%20Parentheses(%E7%BA%BF%E6%AE%B5%E6%A0%91)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/04/CodeForces%20Gym%20-%20100803G%20Flipping%20Parentheses(%E7%BA%BF%E6%AE%B5%E6%A0%91)/" itemprop="url">CodeForces Gym - 100803G Flipping Parentheses(线段树)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-04T10:23:56-07:00">
+                2018-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E7%BA%BF%E6%AE%B5%E6%A0%91/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意是给定一个匹配好的括号序列，后面有Q次操作，每次操作将第q位的括号反转，你需要找到一个位置反转该位置上的括号让它重新匹配。位置要求是所有可行位置中最左边的。<br>我们令左括号为1，右括号为-1，并求出前缀和。考虑将右括号变为左括号的过程，我们能发现该操作的影响是从该位置到序列尾部的前缀和加2。将左括号变为右括号则是区间-2。为了反转后的括号序列是合法的，我们的前缀和中不能出现小于0的数。因而对操作是右括号变为左括号的情况我们可以将问题转化为哪个位置到末尾的最小值是2，以上所有操作可以使用二分+区间更新线段树实现。而对于左括号变为右括号的操作，我们只要维护一个set保存右括号的下标，然后取出最小的下标即可（很简单的思路，简单画一画就能发现）。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/04/CodeForces%20Gym%20-%20100803G%20Flipping%20Parentheses(%E7%BA%BF%E6%AE%B5%E6%A0%91)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/05/28/CodeForces%20Gym%20-%20101620F%20Faulty%20Factorial(%E7%AE%80%E5%8D%95%E6%95%B0%E8%AE%BA)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -336,7 +493,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-28T06:57:46-07:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-28T21:57:46-07:00">
                 2018-05-28
               </time>
             
@@ -359,8 +516,30 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index">
                     <span itemprop="name">数论</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E8%AE%BA/%E5%A8%81%E5%B0%94%E9%80%8A%E5%AE%9A%E7%90%86/" itemprop="url" rel="index">
+                    <span itemprop="name">威尔逊定理</span>
                   </a>
                 </span>
 
@@ -488,7 +667,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-26T00:45:26-07:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-26T15:45:26-07:00">
                 2018-05-26
               </time>
             
@@ -511,7 +690,29 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index">
+                    <span itemprop="name">数论</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E8%AE%BA/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97/" itemprop="url" rel="index">
                     <span itemprop="name">扩展欧几里得</span>
                   </a>
                 </span>
@@ -634,7 +835,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-24T04:43:34-07:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-24T19:43:34-07:00">
                 2018-05-24
               </time>
             
@@ -657,7 +858,29 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8A%B6%E5%8E%8Bdp/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index">
+                    <span itemprop="name">动态规划</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%8A%B6%E5%8E%8Bdp/" itemprop="url" rel="index">
                     <span itemprop="name">状压dp</span>
                   </a>
                 </span>
@@ -751,7 +974,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/05/18/UVA%20-%2012018%20Juice%20Extractor(dp)/">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/05/19/UVA%20-%2012018%20Juice%20Extractor(dp)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -770,7 +993,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/18/UVA%20-%2012018%20Juice%20Extractor(dp)/" itemprop="url">UVA - 12018 Juice Extractor(dp)</a></h1>
+                <a class="post-title-link" href="/2018/05/19/UVA%20-%2012018%20Juice%20Extractor(dp)/" itemprop="url">UVA - 12018 Juice Extractor(dp)</a></h1>
         
 
         <div class="post-meta">
@@ -782,8 +1005,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-18T19:43:27-07:00">
-                2018-05-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-19T10:43:27-07:00">
+                2018-05-19
               </time>
             
 
@@ -805,8 +1028,30 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index">
                     <span itemprop="name">动态规划</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%BA%BF%E6%80%A7dp/" itemprop="url" rel="index">
+                    <span itemprop="name">线性dp</span>
                   </a>
                 </span>
 
@@ -846,7 +1091,7 @@
           <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>首先对水果按出现时间为第一关键字，消失时间为第二关键字来排序。dp[i]为当物品i出现时将它及它之前的水果全切完的最大价值。转移时第一重循环顺序枚举物品，设置一个计数器记录从i水果到第二重循环的那个水果之间有几个还在空中。第二重循环从当前物品往前找，每当发现其还在空中时计数器++。然后就是dp[i]=max(dp[i],dp[j-1]+cnt&gt;2?cnt:0)来转移。这里要注意的一点是如果左端点重合的区间要取数组中最左边的一个区间，因为题意要求我们对在空中的水过一次切完不能有剩，不这样做的话可能会让结果的答案变大。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/18/UVA%20-%2012018%20Juice%20Extractor(dp)/#more" rel="contents">
+            <a class="btn" href="/2018/05/19/UVA%20-%2012018%20Juice%20Extractor(dp)/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -897,7 +1142,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/05/15/BZOJ%20-%201001%20%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90(%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E8%BD%AC%E5%AF%B9%E5%81%B6%E5%9B%BE%E6%9C%80%E7%9F%AD%E8%B7%AF)/">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/05/16/BZOJ%20-%201001%20%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90(%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E8%BD%AC%E5%AF%B9%E5%81%B6%E5%9B%BE%E6%9C%80%E7%9F%AD%E8%B7%AF)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -916,7 +1161,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/15/BZOJ%20-%201001%20%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90(%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E8%BD%AC%E5%AF%B9%E5%81%B6%E5%9B%BE%E6%9C%80%E7%9F%AD%E8%B7%AF)/" itemprop="url">BZOJ - 1001 狼抓兔子(网络流最小割转对偶图最短路)</a></h1>
+                <a class="post-title-link" href="/2018/05/16/BZOJ%20-%201001%20%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90(%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E8%BD%AC%E5%AF%B9%E5%81%B6%E5%9B%BE%E6%9C%80%E7%9F%AD%E8%B7%AF)/" itemprop="url">BZOJ - 1001 狼抓兔子(网络流最小割转对偶图最短路)</a></h1>
         
 
         <div class="post-meta">
@@ -928,8 +1173,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-15T23:01:18-07:00">
-                2018-05-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-16T14:01:18-07:00">
+                2018-05-16
               </time>
             
 
@@ -951,7 +1196,18 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E7%BB%9C%E6%B5%81/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E7%BD%91%E7%BB%9C%E6%B5%81/" itemprop="url" rel="index">
                     <span itemprop="name">网络流</span>
                   </a>
                 </span>
@@ -992,7 +1248,7 @@
           <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意可得我们要求一个网络流的最小割。但由于dinic时间复杂度是O(EV^2)，显然对于这张图来说边数会达到10^6以上，所以dinic的时间复杂度是不满足我们的要求的。所以我们学习一个O(nlogn)的姿势——网络流最小割转对偶图最短路。对偶图的概念摸<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AF%B9%E5%81%B6%E5%9B%BE/10506149?fr=aladdin">这里</a>。通过观察我们能发现对偶图中的环即对应着原图的割，但直接用对偶图环的性质我们并没有什么高效的算法。所以我们在建图过程中稍作修改，我们这样对样例建图：<br><img src="https://i.loli.net/2020/12/14/QcBPL9XfAvhVrCx.png" alt="bzoj1001"><br>我们先在左上角的源点和右下角的汇点连一条线，如上图，然后再建对偶图。这时比较对偶图的性质显然可以知道对偶图中0到1的最短路即为最小割，运用spfa或dijkstra堆优化就能做到O(nlogn)。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/15/BZOJ%20-%201001%20%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90(%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E8%BD%AC%E5%AF%B9%E5%81%B6%E5%9B%BE%E6%9C%80%E7%9F%AD%E8%B7%AF)/#more" rel="contents">
+            <a class="btn" href="/2018/05/16/BZOJ%20-%201001%20%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90(%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E8%BD%AC%E5%AF%B9%E5%81%B6%E5%9B%BE%E6%9C%80%E7%9F%AD%E8%B7%AF)/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1043,7 +1299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/04/12/CodeForces%20Gym%20-%20100959J%20Ropes(prufer%E5%BA%8F%E5%88%97)/">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/04/13/CodeForces%20Gym%20-%20100959J%20Ropes(prufer%E5%BA%8F%E5%88%97)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -1062,7 +1318,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/12/CodeForces%20Gym%20-%20100959J%20Ropes(prufer%E5%BA%8F%E5%88%97)/" itemprop="url">CodeForces Gym - 100959J Ropes(prufer序列)</a></h1>
+                <a class="post-title-link" href="/2018/04/13/CodeForces%20Gym%20-%20100959J%20Ropes(prufer%E5%BA%8F%E5%88%97)/" itemprop="url">CodeForces Gym - 100959J Ropes(prufer序列)</a></h1>
         
 
         <div class="post-meta">
@@ -1074,8 +1330,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-12T22:43:29-07:00">
-                2018-04-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T13:43:29-07:00">
+                2018-04-13
               </time>
             
 
@@ -1097,7 +1353,18 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/prufer%E5%BA%8F%E5%88%97/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/prufer%E5%BA%8F%E5%88%97/" itemprop="url" rel="index">
                     <span itemprop="name">prufer序列</span>
                   </a>
                 </span>
@@ -1138,7 +1405,7 @@
           <p>prufer序列学习笔记</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/12/CodeForces%20Gym%20-%20100959J%20Ropes(prufer%E5%BA%8F%E5%88%97)/#more" rel="contents">
+            <a class="btn" href="/2018/04/13/CodeForces%20Gym%20-%20100959J%20Ropes(prufer%E5%BA%8F%E5%88%97)/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1189,7 +1456,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/04/09/POJ%20-%202114%20Boatherds(%E7%82%B9%E5%88%86%E6%B2%BB)/">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/04/10/POJ%20-%202114%20Boatherds(%E7%82%B9%E5%88%86%E6%B2%BB)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -1208,7 +1475,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/09/POJ%20-%202114%20Boatherds(%E7%82%B9%E5%88%86%E6%B2%BB)/" itemprop="url">POJ - 2114 Boatherds(点分治)</a></h1>
+                <a class="post-title-link" href="/2018/04/10/POJ%20-%202114%20Boatherds(%E7%82%B9%E5%88%86%E6%B2%BB)/" itemprop="url">POJ - 2114 Boatherds(点分治)</a></h1>
         
 
         <div class="post-meta">
@@ -1220,8 +1487,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-09T18:18:41-07:00">
-                2018-04-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-10T09:18:41-07:00">
+                2018-04-10
               </time>
             
 
@@ -1243,7 +1510,18 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%82%B9%E5%88%86%E6%B2%BB/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E7%82%B9%E5%88%86%E6%B2%BB/" itemprop="url" rel="index">
                     <span itemprop="name">点分治</span>
                   </a>
                 </span>
@@ -1284,7 +1562,7 @@
           <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>点分治裸题，但统计长度为k的路径时需要注意要使用O(n)的算法（我用了O(n^2)的居然没发现，TLE。。）具体思路就是先对depth排序，然后当depth[l]+depth[r]==k是，因为可能有与depth[l],depth[r]深度相同的，所以统计相同的个数直接numl*numr计算。若depth[l]+depth[r]&lt;k那么l++，因为这时对当前的l能满足条件的r都已经计算过了，所以直接l++。若depth[l]+depth[r]&gt;k，思路一样，r–。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/09/POJ%20-%202114%20Boatherds(%E7%82%B9%E5%88%86%E6%B2%BB)/#more" rel="contents">
+            <a class="btn" href="/2018/04/10/POJ%20-%202114%20Boatherds(%E7%82%B9%E5%88%86%E6%B2%BB)/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1335,7 +1613,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/04/04/HDU%20-%204089%20Activation(%E6%A6%82%E7%8E%87dp)/">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/04/05/HDU%20-%204089%20Activation(%E6%A6%82%E7%8E%87dp)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -1354,7 +1632,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/04/HDU%20-%204089%20Activation(%E6%A6%82%E7%8E%87dp)/" itemprop="url">HDU - 4089 Activation(概率dp)</a></h1>
+                <a class="post-title-link" href="/2018/04/05/HDU%20-%204089%20Activation(%E6%A6%82%E7%8E%87dp)/" itemprop="url">HDU - 4089 Activation(概率dp)</a></h1>
         
 
         <div class="post-meta">
@@ -1366,8 +1644,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-04T23:01:59-07:00">
-                2018-04-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-05T14:01:59-07:00">
+                2018-04-05
               </time>
             
 
@@ -1389,7 +1667,29 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%A6%82%E7%8E%87dp/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index">
+                    <span itemprop="name">动态规划</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%A6%82%E7%8E%87dp/" itemprop="url" rel="index">
                     <span itemprop="name">概率dp</span>
                   </a>
                 </span>
@@ -1436,7 +1736,7 @@
 <p>接下来我们发现这个dp转移方程。。构成了一个环？不过这道题并没有用到高斯消元，我们将dp转移中第j项与dp[i]即当前状态无关的令为一个常数c[j]，然后对第一个方程迭代。我们最后化简可得如下式子：<br><img src="https://i.loli.net/2020/12/14/U2rTOzRv1ctio4y.png" alt="hdu4089"><br>然后我们用转移方程求出所有dp[i]的状态，然后dp[n][m]就是答案。这题有个比较奇怪的点，似乎如果不对p4约等于0的情况进行特判会出问题？不是很懂为什么。。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/04/HDU%20-%204089%20Activation(%E6%A6%82%E7%8E%87dp)/#more" rel="contents">
+            <a class="btn" href="/2018/04/05/HDU%20-%204089%20Activation(%E6%A6%82%E7%8E%87dp)/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1487,7 +1787,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/04/02/CodeForces%20-%20864E%20Fire(dp)/">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/04/03/CodeForces%20-%20864E%20Fire(dp)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -1506,7 +1806,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/02/CodeForces%20-%20864E%20Fire(dp)/" itemprop="url">CodeForces - 864E Fire(dp)</a></h1>
+                <a class="post-title-link" href="/2018/04/03/CodeForces%20-%20864E%20Fire(dp)/" itemprop="url">CodeForces - 864E Fire(dp)</a></h1>
         
 
         <div class="post-meta">
@@ -1518,8 +1818,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-02T17:40:50-07:00">
-                2018-04-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-03T08:40:50-07:00">
+                2018-04-03
               </time>
             
 
@@ -1541,8 +1841,30 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index">
                     <span itemprop="name">动态规划</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%BA%BF%E6%80%A7dp/" itemprop="url" rel="index">
+                    <span itemprop="name">线性dp</span>
                   </a>
                 </span>
 
@@ -1582,160 +1904,7 @@
           <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>01背包dp，需要注意的是物品过了d[i]秒后就会焚毁，这使得背包的选取顺序影响了dp的更新。这是为什么呢？考虑我们背包的过程，我们为了避免选取顺序的影响强制给了背包一个顺序，而由于我们先放了a大小的，后面b大小只要空间足够的肯定能放，反之亦然。也就是说背包的选取顺序对dp的更新没有影响。但是这里因为物品焚毁，如果我们先放了a大小的结果发现b已经焚毁了就没法更新状态了，但实际上我们能把先焚毁的b放进去来更新状态，所以我们将d排序后再跑背包dp，这样保证了先焚毁的能更新后焚毁的物品的状态。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/02/CodeForces%20-%20864E%20Fire(dp)/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/04/01/CodeForces%20-%2056D%20Changing%20a%20String(dp)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/01/CodeForces%20-%2056D%20Changing%20a%20String(dp)/" itemprop="url">CodeForces - 56D Changing a String(dp)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-01T04:39:29-07:00">
-                2018-04-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index">
-                    <span itemprop="name">动态规划</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>第一反应是最长公共子序列乱搞。。显然不对啊<br>我们令dp[i][j]为从s1(1,i)转换到s2(1,j)所需要的最少步数。分四种情况讨论:</p>
-<ol>
-<li>插入：dp[i][j]=min(dp[i][j],dp[i][j-1]+1)，我们已经知道从s1(1,i)转换到s2(1,j-1)，所以在j-1尾插入字来尝试更新dp[i][j]</li>
-<li>删除：dp[i][j]=min(dp[i][j],dp[i-1][j]+1)，我们已经知道从s1(1,i-1)转换到s2(1,j)，因为已经转换完成，所以i比之前i-1的状态只需要删去一个字符就能变成s2(1,j)</li>
-<li>替换：dp[i][j]=dp[i-1][j-1]+1，转移显而易见</li>
-<li>不变：dp[i][j]=dp[i-1][j-1],同样是转移显而易见。</li>
-</ol>
-<p>最后打印路径即可，因为这里操作可逆</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/01/CodeForces%20-%2056D%20Changing%20a%20String(dp)/#more" rel="contents">
+            <a class="btn" href="/2018/04/03/CodeForces%20-%20864E%20Fire(dp)/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1825,7 +1994,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">88</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1836,7 +2005,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1847,7 +2016,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
