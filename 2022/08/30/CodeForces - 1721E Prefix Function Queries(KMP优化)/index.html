@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="真彩希帆のファン">
+<meta name="description" content="cf中碰到了kmp的一种优化方式，特此记录。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CodeForces - 1721E Prefix Function Queries(KMP优化)">
 <meta property="og:url" content="https://manushi98.github.io/2022/08/30/CodeForces%20-%201721E%20Prefix%20Function%20Queries(KMP%E4%BC%98%E5%8C%96)/index.html">
 <meta property="og:site_name" content="ManuShi98">
-<meta property="og:description" content="真彩希帆のファン">
+<meta property="og:description" content="cf中碰到了kmp的一种优化方式，特此记录。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-30T19:02:19.000Z">
-<meta property="article:modified_time" content="2022-08-30T22:10:33.880Z">
+<meta property="article:modified_time" content="2022-09-04T08:10:01.604Z">
 <meta property="article:author" content="ManuShi98">
 <meta property="article:tag" content="kmp">
 <meta name="twitter:card" content="summary">
@@ -418,7 +418,67 @@
       
 
       
-        
+        <p>cf中碰到了kmp的一种优化方式，特此记录。</p>
+<span id="more"></span>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>我们知道，kmp是一种在线算法。即便我们不断在字符串尾部添加字符，我们依然能保持O(n)的均摊复杂度。然而，该题在给予字符串s后，要求对q个字符串ti分别求next数组。这种时候我们的均摊分析就失效了。因为对于每一个新的t，我们可能都需要跳n步来求fail数组。这是不能接受的。为此引出了一个新的概念<a target="_blank" rel="noopener" href="https://oi-wiki.org/string/kmp/#%E6%A0%B9%E6%8D%AE%E5%89%8D%E7%BC%80%E5%87%BD%E6%95%B0%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E6%9C%BA">前缀函数自动机</a>.<br>首先我们来看kmp的代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// C++ Version By OI wiki</span></span><br><span class="line"><span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">prefix_function</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n = (<span class="keyword">int</span>)s.<span class="built_in">length</span>();</span><br><span class="line">  <span class="function">vector&lt;<span class="keyword">int</span>&gt; <span class="title">pi</span><span class="params">(n)</span></span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> j = pi[i - <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; s[i] != s[j]) j = pi[j - <span class="number">1</span>];<span class="comment">//可以看到，如果我们之前进行了类似while回朔的话，我们在未来的某个位置i&#x27;，可能还会跳到当前的位置i，然后再走一遍这个while循环。这是非常浪费时间的。所以这里是优化的核心，可以考虑通过dp的方式优化。</span></span><br><span class="line">    <span class="keyword">if</span> (s[i] == s[j]) j++;</span><br><span class="line">    pi[i] = j;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> pi;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一个显然的想法，那么我们能直接使用一个一维的jump数组，记录i位置我们最终跳到了哪里。这样未来while回朔到i位置的时候，如果发现jump数组已经访问过就直接更新到jump(i)，这样可以达到真正的O(1)更新。这个思路的优化方向是正确的，但是我们考虑这样一种情形：假定fail指针指向的是某一个a,子串形式为…ab…。当我们fail指针指向a，且子串形式也为…ab…时，我们能沿用此处的jump函数。但是如果是…ac…呢？显然此时jump函数就失效了。因此，jump数组的形式应该是jump(i, j)，代表跳到位置i，待匹配字符为j时，最终移动的位置。</p>
+<p>对于OI Wiki的O(n^2)优化到O(n)我觉得是比较好理解的。简而言之就是使用dp的思想，避免重复跳跃。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// OI Wiki O(n^2)</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">compute_automaton</span><span class="params">(string s, vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; aut)</span> </span>&#123;</span><br><span class="line">  s += <span class="string">&#x27;#&#x27;</span>;</span><br><span class="line">  <span class="keyword">int</span> n = s.<span class="built_in">size</span>();</span><br><span class="line">  vector&lt;<span class="keyword">int</span>&gt; pi = <span class="built_in">prefix_function</span>(s);</span><br><span class="line">  aut.<span class="built_in">assign</span>(n, vector&lt;<span class="keyword">int</span>&gt;(<span class="number">26</span>));</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> c = <span class="number">0</span>; c &lt; <span class="number">26</span>; c++) &#123;</span><br><span class="line">      <span class="keyword">int</span> j = i;</span><br><span class="line">      <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; <span class="string">&#x27;a&#x27;</span> + c != s[j]) j = pi[j - <span class="number">1</span>];</span><br><span class="line">      <span class="keyword">if</span> (<span class="string">&#x27;a&#x27;</span> + c == s[j]) j++;</span><br><span class="line">      aut[i][c] = j;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// OI Wiki O(n)</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">compute_automaton</span><span class="params">(string s, vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt;&amp; aut)</span> </span>&#123;</span><br><span class="line">  s += <span class="string">&#x27;#&#x27;</span>;</span><br><span class="line">  <span class="keyword">int</span> n = s.<span class="built_in">size</span>();</span><br><span class="line">  vector&lt;<span class="keyword">int</span>&gt; pi = <span class="built_in">prefix_function</span>(s);</span><br><span class="line">  aut.<span class="built_in">assign</span>(n, vector&lt;<span class="keyword">int</span>&gt;(<span class="number">26</span>));</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> c = <span class="number">0</span>; c &lt; <span class="number">26</span>; c++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; <span class="string">&#x27;a&#x27;</span> + c != s[i])</span><br><span class="line">        aut[i][c] = aut[pi[i - <span class="number">1</span>]][c];</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        aut[i][c] = i + (<span class="string">&#x27;a&#x27;</span> + c == s[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里在参考jiangly代码的时候，我发现他跳过了prefix_function这一步，直接在同一个循环中求jump和fail数组。核心代码在于</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(i&amp;&amp;str[i] == <span class="string">&#x27;a&#x27;</span>+j) &#123;</span><br><span class="line">    jump[i][j] = i+<span class="number">1</span>;</span><br><span class="line">    fail[i] = jump[fail[i<span class="number">-1</span>]][j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原理是fail(i-1)一定是一个最长公共前后缀，这样我们只要看fail(i-1)落到的位置（注意这里不同kmp的fail数组可能含义不一样。比如abcda，我实现的fail最后一个a的值是1，所以你能发现jump[fail[i-1]][j]正好就是在b上做比较。）这样就能方便地在一个循环中算出fail了。</p>
+<p>最后，我们以一个表格作收尾，方便你更好地理解jump和fail的计算过程。</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">a</th>
+<th align="center">b</th>
+<th align="center">a</th>
+<th align="center">c</th>
+<th align="center">a</th>
+<th align="center">b</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">jumpa</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">5</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">jumpb</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">2</td>
+<td align="center">0</td>
+<td align="center">6</td>
+</tr>
+<tr>
+<td align="center">jumpc</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">4</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">fail</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">2</td>
+</tr>
+</tbody></table>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll = <span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1e6</span>+<span class="number">15</span>;</span><br><span class="line"><span class="keyword">int</span> fail[MAXN] = &#123;<span class="number">0</span>&#125;, jump[MAXN][<span class="number">26</span>] = &#123;&#123;<span class="number">0</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    string str;</span><br><span class="line">    cin&gt;&gt;str;</span><br><span class="line">    <span class="keyword">int</span> n = str.<span class="built_in">length</span>();</span><br><span class="line">    fail[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    jump[<span class="number">0</span>][str[<span class="number">0</span>]-<span class="string">&#x27;a&#x27;</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">26</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(i&amp;&amp;str[i] == <span class="string">&#x27;a&#x27;</span>+j) &#123;</span><br><span class="line">                jump[i][j] = i+<span class="number">1</span>;</span><br><span class="line">                fail[i] = jump[fail[i<span class="number">-1</span>]][j];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                jump[i][j] = jump[fail[i<span class="number">-1</span>]][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        string q;</span><br><span class="line">        cin&gt;&gt;q;</span><br><span class="line">        <span class="keyword">int</span> m = q.<span class="built_in">length</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &lt; n+m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">26</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(q[i-n]==<span class="string">&#x27;a&#x27;</span>+j) &#123;</span><br><span class="line">                    jump[i][j] = i+<span class="number">1</span>;</span><br><span class="line">                    fail[i] = jump[fail[i<span class="number">-1</span>]][j];</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    jump[i][j] = jump[fail[i<span class="number">-1</span>]][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            cout&lt;&lt;fail[i]&lt;&lt;<span class="string">&quot; \n&quot;</span>[i==n+m<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;./input.txt&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;./output.txt&quot;</span>,<span class="string">&quot;w&quot;</span>,stdout);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLINE_JUDGE</span></span></span><br><span class="line">    std::ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    std::cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line"><span class="comment">//    int T;</span></span><br><span class="line"><span class="comment">//    cin&gt;&gt;T;</span></span><br><span class="line"><span class="comment">//    while(T--) &#123;</span></span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -510,8 +570,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -605,6 +674,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
