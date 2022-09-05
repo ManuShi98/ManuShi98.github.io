@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="ManuShi98's Blog" />
+  <meta name="keywords" content="树状数组," />
 
 
 
@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="Hi, I’m Manu Shi. I used to be an ACM contester in Donghua University from 2016 to 2018. I have experience about lots of areas like Front End(Vue &amp; React), Back End(Spring Boot &amp; Node.js), App">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About me">
-<meta property="og:url" content="https://manushi98.github.io/about/index.html">
+<meta name="description" content="思路：说来惭愧，看到这道题的第一反应是一个二维的树状数组（因为题没读完）。在读二维树状数组的资料时恰好看到了别人的资料，发现读入数据是按照y坐标的递增序读入的。那么对于y的考虑显然是不必要的，所以只需要一维就能够完成这道题。这道题使用y递增序化二维问题为一维问题似乎是个不错的解题思路？然后由于是第一次手写BIT的板子，在这里稍微做一些笔记吧。 在白书上对于树状数组提供的功能有两个：1.给定位置，计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="POJ – 2352 Stars">
+<meta property="og:url" content="https://manushi98.github.io/2017/10/13/POJ%20%E2%80%93%202352%20Stars/index.html">
 <meta property="og:site_name" content="ManuShi98">
-<meta property="og:description" content="Hi, I’m Manu Shi. I used to be an ACM contester in Donghua University from 2016 to 2018. I have experience about lots of areas like Front End(Vue &amp; React), Back End(Spring Boot &amp; Node.js), App">
+<meta property="og:description" content="思路：说来惭愧，看到这道题的第一反应是一个二维的树状数组（因为题没读完）。在读二维树状数组的资料时恰好看到了别人的资料，发现读入数据是按照y坐标的递增序读入的。那么对于y的考虑显然是不必要的，所以只需要一维就能够完成这道题。这道题使用y递增序化二维问题为一维问题似乎是个不错的解题思路？然后由于是第一次手写BIT的板子，在这里稍微做一些笔记吧。 在白书上对于树状数组提供的功能有两个：1.给定位置，计">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-02T01:20:37.000Z">
-<meta property="article:modified_time" content="2022-09-05T03:37:08.978Z">
+<meta property="og:image" content="https://i.loli.net/2020/12/14/toecQj2qKE83Ji6.jpg">
+<meta property="article:published_time" content="2017-10-14T00:17:31.000Z">
+<meta property="article:modified_time" content="2022-08-30T22:01:06.192Z">
 <meta property="article:author" content="ManuShi98">
+<meta property="article:tag" content="树状数组">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/12/14/toecQj2qKE83Ji6.jpg">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://manushi98.github.io/about/"/>
+  <link rel="canonical" href="https://manushi98.github.io/2017/10/13/POJ – 2352 Stars/"/>
 
 
 
 
 
-  <title>About me | ManuShi98</title>
+  <title>POJ – 2352 Stars | ManuShi98</title>
   
 
 
@@ -294,157 +297,186 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/10/13/POJ%20%E2%80%93%202352%20Stars/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">About me</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>Hi, I’m Manu Shi. I used to be an ACM contester in Donghua University from 2016 to 2018. I have experience about lots of areas like Front End(Vue &amp; React), Back End(Spring Boot &amp; Node.js), Application(Android), Machine Learning(pytorch, tensorflow…) and DevOps. Now I have a strong interest in distributed system and hope to use algorithm I learnt to make distributed system work more efficient.</p>
-<h1 id="Education"><a href="#Education" class="headerlink" title="Education"></a>Education</h1><table>
-<thead>
-<tr>
-<th align="center">School</th>
-<th align="center">Date</th>
-<th align="center">Degree</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Donghua University, Shanghai, China</td>
-<td align="center">Sep 2016-Jul 2020</td>
-<td align="center">B.E. in Software Engineering</td>
-</tr>
-<tr>
-<td align="center">University of Southern California, Los Angeles, U.S.A</td>
-<td align="center">Jan 2022-Dec 2023</td>
-<td align="center">M.S. in Computer Science</td>
-</tr>
-</tbody></table>
-<h1 id="Internship"><a href="#Internship" class="headerlink" title="Internship"></a>Internship</h1><h2 id="Shanghai-Pedawise-Intelligent-Technology-Co-Ltd-Software-Development-Engineer-Intern"><a href="#Shanghai-Pedawise-Intelligent-Technology-Co-Ltd-Software-Development-Engineer-Intern" class="headerlink" title="Shanghai Pedawise Intelligent Technology Co., Ltd. | Software Development Engineer Intern"></a>Shanghai Pedawise Intelligent Technology Co., Ltd. | Software Development Engineer Intern</h2><p><strong>2020.8-2020.10</strong></p>
-<ul>
-<li>Worked with a team to develop RESTful APIs for real-time webpages that displayed data analysis on process flows and product quality from client factories captured via assembly line sensors to optimize production.</li>
-<li>Developed features to enable factories to self-query the quality of products 10,000 times per second using Spring Boot.</li>
-<li>Increased efficiency of web crawling by 150% by upgrading the centralized Scrapy system to a distributed crawling system.</li>
-<li>Analyzed data using factory formulas and saved aggregate data to tables in PostgreSQL.</li>
-<li>Reduced SQL execution time by 40% by optimizing SQL query sentences using horizontal vertical scaling.</li>
-</ul>
-<h2 id="Shanghai-Pudong-Development-Bank-SPDB-Front-End-Engineer-Intern"><a href="#Shanghai-Pudong-Development-Bank-SPDB-Front-End-Engineer-Intern" class="headerlink" title="Shanghai Pudong Development Bank (SPDB) | Front End Engineer Intern"></a>Shanghai Pudong Development Bank (SPDB) | Front End Engineer Intern</h2><p><strong>2021.3-2021.5</strong></p>
-<ul>
-<li>Co-developed a new version of the banking home page with a concise layout and custom features that enabled all 30MM users to easily access and navigate the SPDB application using React Native.</li>
-<li>Created new features including a rank list of the trending stocks and a carousel to display a range of pictures. </li>
-<li>Optimized the mobile application experience by implementing a resource package to enable users to view their appointment information, bills, and coupons offline.    </li>
-<li>Resolved 10+ memory leaks caused by React Native code as a member of the SPDB memory leak monitor project.</li>
-<li>Improved the loading speed of H5 pages by 50% by leveraging the pre-renderer plugin.</li>
-</ul>
-<h2 id="ByteDance-Xigua-Video-Android-Development-Intern"><a href="#ByteDance-Xigua-Video-Android-Development-Intern" class="headerlink" title="ByteDance - Xigua Video | Android Development Intern"></a>ByteDance - Xigua Video | Android Development Intern</h2><p><strong>2021.7-2021.11</strong></p>
-<ul>
-<li>Led a project to improve the accessibility of the Xigua Video android application with Android accessibility APIs that received verification from the Ministry of Industry and Information Technology of China.</li>
-<li>Cooperated with the UI, R&amp;D, and QA teams and ByteDance’s Accessibility Association to define and set up accessibility development standards and create a new accessible UI.</li>
-<li>Worked with the QA team to implement a new testing process for checking the accessibility of all the features before release with both automatic accessibility auditor and manual testing. </li>
-<li>Implemented mandatory readable descriptions, a click event standard, and a focus standard that enables users to swipe from left to right to navigate from different elements like buttons or images. </li>
-<li>Led the modification of 50+ pages of the Xigua Video application to improve the accessibility of older features.</li>
-<li>Improved the loading speed of pictures by 15% and reduced memory usage by 20% by refactoring the banner selector of the personal home page within the application.</li>
-<li>Redesigned a new account rebinding system to help users change to a new phone number using Java and Kotlin.</li>
-<li>Introduced a new risk control system with the Data Analysis team that supported third-party rebinding and reduced accounts account hacks by 95%, false bans by 50%, and overall negative user feedback by 70%.</li>
-</ul>
-<h1 id="Award"><a href="#Award" class="headerlink" title="Award"></a>Award</h1><table>
-<thead>
-<tr>
-<th align="center">Name of Award</th>
-<th align="center">Data</th>
-<th align="center">Level</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Silver Award, The 2018 ACM-ICPC Asia Regional Contest Xuzhou Site</td>
-<td align="center">28/Oct/2018</td>
-<td align="center">International</td>
-</tr>
-<tr>
-<td align="center">Bronze Award, The 2018 China Collegiate Programming Contest, Qinhuangdao Site</td>
-<td align="center">27/Sep/2018</td>
-<td align="center">National</td>
-</tr>
-<tr>
-<td align="center">Silver Award, The 2018 ACM-ICPC China Shanghai Metropolitan Invitational Contest</td>
-<td align="center">21/Jul/2018</td>
-<td align="center">National</td>
-</tr>
-<tr>
-<td align="center">Silver Award, The 2018 Shanghai STEED Programming Contest</td>
-<td align="center">09/Jun/2018</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">The First Prize, The “Yoozoo Cup” Shanghai University Program Design Invitational Competition &amp; the 10th Program Design Competition of East China Normal University (Professional Group)</td>
-<td align="center">12/May/2018</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">Bronze Award, The 2017 Shanghai STEED Programming Contest</td>
-<td align="center">09/Jul/2017</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">Silver Award, The 2017 Shanghai STEED Programming Contest</td>
-<td align="center">03/Jun/2017</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">The Third Prize, The “Yoozoo Cup” Shanghai University Program Design Invitational Competition &amp; the 9th Program Design Competition of East China Normal University (Professional Group)</td>
-<td align="center">20/May/2017</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">Gold Award, The 2018 ACM-ICPC Contest On Campus of Donghua University</td>
-<td align="center">09/Jun/2018</td>
-<td align="center">College-level</td>
-</tr>
-<tr>
-<td align="center">Silver Award, The 2017 ACM-ICPC Friendly Contest On Campus</td>
-<td align="center">29/Dec/2017</td>
-<td align="center">College-level</td>
-</tr>
-<tr>
-<td align="center">Gold Award, The 2017 ACM-ICPC Contest On Campus</td>
-<td align="center">03/Jun/2017</td>
-<td align="center">College-level</td>
-</tr>
-</tbody></table>
-<h1 id="Project-Experience"><a href="#Project-Experience" class="headerlink" title="Project Experience"></a>Project Experience</h1><h2 id="Application-of-Machine-Learning-in-Computer-Network-Online-University-of-Chicago"><a href="#Application-of-Machine-Learning-in-Computer-Network-Online-University-of-Chicago" class="headerlink" title="Application of Machine Learning in Computer Network(Online) | University of Chicago"></a>Application of Machine Learning in Computer Network(Online) | University of Chicago</h2><p>Student Researcher; Advisor: Prof. Nick Feamster</p>
-<ul>
-<li>Conducted the network traffic classification of DNS over HTTPS</li>
-<li>Searched and studied a variety of papers to find the appropriate model</li>
-<li>Used autoencoder to preprocess the data</li>
-</ul>
-<h2 id="Research-on-Chess-Algorithms-based-on-Factor-Space-Donghua-University"><a href="#Research-on-Chess-Algorithms-based-on-Factor-Space-Donghua-University" class="headerlink" title="Research on Chess Algorithms based on Factor Space | Donghua University"></a>Research on Chess Algorithms based on Factor Space | Donghua University</h2><p>Thesis; Advisor: Prof: Hongjian Wang</p>
-<ul>
-<li>Combined the theory of factor space with the threat sequence algorithm established by Victor Allis, and proposed a new tic-factor space based tic-tac-board algorithm.</li>
-<li>Used the idea of dynamic programming to prove the correctness of the algorithm; designed two methods to compare the correctness of the algorithm in tic-tac-toe.</li>
-<li>Found methods to greatly improve the accuracy of the algorithm from the perspectives of special case treatment and algorithm search depth.</li>
-</ul>
-<h1 id="Skill"><a href="#Skill" class="headerlink" title="Skill"></a>Skill</h1><p>Excellent with: Programming Language(C, C++, Java, Kotlin, Javascript), Data Structure, Algorithm, IDE: (IDEA, Codeblocks, VS code)<br><br>Proficient in: Programming Language(python, HTML, CSS, SQL, nodejs, Typescript), IDE: (Pycharm, sublime), Database: (MySQL, Oracle), FrameWork:(React Native, Vue, Spring Boot)<br><br>Experienced with: Programming Language(Go, Matlab), FrameWork: (Tensorflow, Pytorch), UML</p>
-
+          <h1 class="post-title" itemprop="name headline">POJ – 2352 Stars</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-13T17:17:31-07:00">
+                2017-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" itemprop="url" rel="index">
+                    <span itemprop="name">树状数组</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p><em>思路：</em><br>说来惭愧，看到这道题的第一反应是一个二维的树状数组（因为题没读完）。在读二维树状数组的资料时恰好看到了别人的资料，发现读入数据是按照y坐标的递增序读入的。那么对于y的考虑显然是不必要的，所以只需要一维就能够完成这道题。这道题使用y递增序化二维问题为一维问题似乎是个不错的解题思路？然后由于是第一次手写BIT的板子，在这里稍微做一些笔记吧。</p>
+<p><img src="https://i.loli.net/2020/12/14/toecQj2qKE83Ji6.jpg" alt="BIT"><br>在白书上对于树状数组提供的功能有两个：<br><em>1.给定位置，计算前缀和</em></p>
+<p>通过上图的二进制我们能够发现为了求到n的区间和，我们可以通过不断去掉末尾的1（即lowbit）然后对BIT[n]求和的方法来计算前缀和。那么怎么理解这个过程？我的理解是在建立树状数组的时候我们可以把每个部分看成一个小的树状数组。很显然应该能够理解类似100这样的二进制数在维护一个大区间，然后对于后面的两个0位，我们通过添加一个1（对于两个0位每添加一个1就是一个新区间，不能添加两个，不然就跑到7去了，可以对照着图理解）构成了一个小的树状数组的空间（101，110），通过这样不断递归的定义最终完成了整个树状数组。所以在回过头去求的时候我们就要去掉末尾的1返回到前面那个区间。<br><em>2.给定位置的变化量，更新维护的前缀和</em><br>根据上面的介绍，不难理解对于形如1xxx（x为0或者1）的数都处于一个类似小树状数组的空间中，通过左移1可以在同一个树状数组中逐层向上，所以而1xxx又处在10000（即多一位）的区间中，所以显然是可以这样更新的。</p>
+<p>树状数组通常用来求解逆序对以及前缀和询问。</p>
+<span id="more"></span>
+<p><em>代码：</em></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 1e9</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ms(a,val) memset(a,val,sizeof(a))</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> bit[<span class="number">35000</span>],level[<span class="number">17000</span>],n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=pos,ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        ans += bit[i];</span><br><span class="line">        i -= <span class="built_in">lowbit</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = pos;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= <span class="number">35000</span>) &#123;</span><br><span class="line">        bit[i] += x;</span><br><span class="line">        i += <span class="built_in">lowbit</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>), cin.<span class="built_in">tie</span>(<span class="number">0</span>), cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span> (cin&gt;&gt;n) &#123;</span><br><span class="line">        <span class="keyword">int</span> x, y;</span><br><span class="line">        <span class="built_in">ms</span>(bit, <span class="number">0</span>),<span class="built_in">ms</span>(level,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++) &#123;</span><br><span class="line">            cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">            <span class="keyword">int</span> lev = <span class="built_in">sum</span>(x+<span class="number">1</span>);</span><br><span class="line">            level[lev]++;</span><br><span class="line">            <span class="built_in">add</span>(x+<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++) cout &lt;&lt; level[i] &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" rel="tag"># 树状数组</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/13/POJ%20%E2%80%93%202299%20Ultra-QuickSort/" rel="next" title="POJ – 2299 Ultra-QuickSort">
+                <i class="fa fa-chevron-left"></i> POJ – 2299 Ultra-QuickSort
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/13/POJ%20%E2%80%93%202387%20Til%20the%20Cows%20Come%20Home%EF%BC%88Dijkstra%E5%A0%86%E4%BC%98%E5%8C%96%EF%BC%89/" rel="prev" title="POJ – 2387 Til the Cows Come Home（Dijkstra堆优化）">
+                POJ – 2387 Til the Cows Come Home（Dijkstra堆优化） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -479,17 +511,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -583,22 +606,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Education"><span class="nav-number">1.</span> <span class="nav-text">Education</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Internship"><span class="nav-number">2.</span> <span class="nav-text">Internship</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shanghai-Pedawise-Intelligent-Technology-Co-Ltd-Software-Development-Engineer-Intern"><span class="nav-number">2.1.</span> <span class="nav-text">Shanghai Pedawise Intelligent Technology Co., Ltd. | Software Development Engineer Intern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shanghai-Pudong-Development-Bank-SPDB-Front-End-Engineer-Intern"><span class="nav-number">2.2.</span> <span class="nav-text">Shanghai Pudong Development Bank (SPDB) | Front End Engineer Intern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ByteDance-Xigua-Video-Android-Development-Intern"><span class="nav-number">2.3.</span> <span class="nav-text">ByteDance - Xigua Video | Android Development Intern</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Award"><span class="nav-number">3.</span> <span class="nav-text">Award</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Project-Experience"><span class="nav-number">4.</span> <span class="nav-text">Project Experience</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Application-of-Machine-Learning-in-Computer-Network-Online-University-of-Chicago"><span class="nav-number">4.1.</span> <span class="nav-text">Application of Machine Learning in Computer Network(Online) | University of Chicago</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Research-on-Chess-Algorithms-based-on-Factor-Space-Donghua-University"><span class="nav-number">4.2.</span> <span class="nav-text">Research on Chess Algorithms based on Factor Space | Donghua University</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Skill"><span class="nav-number">5.</span> <span class="nav-text">Skill</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

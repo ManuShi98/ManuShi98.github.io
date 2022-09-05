@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="ManuShi98's Blog" />
+  <meta name="keywords" content="后缀数组," />
 
 
 
@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="Hi, I’m Manu Shi. I used to be an ACM contester in Donghua University from 2016 to 2018. I have experience about lots of areas like Front End(Vue &amp; React), Back End(Spring Boot &amp; Node.js), App">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About me">
-<meta property="og:url" content="https://manushi98.github.io/about/index.html">
+<meta name="description" content="思路本题是后缀数组一个常见的应用，不可重叠最长重复子串。后缀数组的基本知识参考SPOJ - SUBST1 New Distinct Substrings一文。对于一个不可重叠最长子串的问题，我们首先对长度二分答案，然后对height数组分段，连续的height值&gt;&#x3D;k的我们分在一起，然后记录段内sa的最小值和最大值，如果两者的差大于等于k+1（题意要求重复子串之间要有一个字符的间隔）那么现在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="POJ - 1743 Musical Theme(不可重叠最长重复子串)">
+<meta property="og:url" content="https://manushi98.github.io/2017/11/10/POJ%20-%201743%20Musical%20Theme(%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%8F%A0%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E4%B8%B2)/index.html">
 <meta property="og:site_name" content="ManuShi98">
-<meta property="og:description" content="Hi, I’m Manu Shi. I used to be an ACM contester in Donghua University from 2016 to 2018. I have experience about lots of areas like Front End(Vue &amp; React), Back End(Spring Boot &amp; Node.js), App">
+<meta property="og:description" content="思路本题是后缀数组一个常见的应用，不可重叠最长重复子串。后缀数组的基本知识参考SPOJ - SUBST1 New Distinct Substrings一文。对于一个不可重叠最长子串的问题，我们首先对长度二分答案，然后对height数组分段，连续的height值&gt;&#x3D;k的我们分在一起，然后记录段内sa的最小值和最大值，如果两者的差大于等于k+1（题意要求重复子串之间要有一个字符的间隔）那么现在">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-02T01:20:37.000Z">
-<meta property="article:modified_time" content="2022-09-05T03:37:08.978Z">
+<meta property="article:published_time" content="2017-11-10T19:58:21.000Z">
+<meta property="article:modified_time" content="2022-08-30T20:00:17.396Z">
 <meta property="article:author" content="ManuShi98">
+<meta property="article:tag" content="后缀数组">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://manushi98.github.io/about/"/>
+  <link rel="canonical" href="https://manushi98.github.io/2017/11/10/POJ - 1743 Musical Theme(不可重叠最长重复子串)/"/>
 
 
 
 
 
-  <title>About me | ManuShi98</title>
+  <title>POJ - 1743 Musical Theme(不可重叠最长重复子串) | ManuShi98</title>
   
 
 
@@ -294,157 +295,193 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2017/11/10/POJ%20-%201743%20Musical%20Theme(%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%8F%A0%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E4%B8%B2)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">About me</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>Hi, I’m Manu Shi. I used to be an ACM contester in Donghua University from 2016 to 2018. I have experience about lots of areas like Front End(Vue &amp; React), Back End(Spring Boot &amp; Node.js), Application(Android), Machine Learning(pytorch, tensorflow…) and DevOps. Now I have a strong interest in distributed system and hope to use algorithm I learnt to make distributed system work more efficient.</p>
-<h1 id="Education"><a href="#Education" class="headerlink" title="Education"></a>Education</h1><table>
-<thead>
-<tr>
-<th align="center">School</th>
-<th align="center">Date</th>
-<th align="center">Degree</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Donghua University, Shanghai, China</td>
-<td align="center">Sep 2016-Jul 2020</td>
-<td align="center">B.E. in Software Engineering</td>
-</tr>
-<tr>
-<td align="center">University of Southern California, Los Angeles, U.S.A</td>
-<td align="center">Jan 2022-Dec 2023</td>
-<td align="center">M.S. in Computer Science</td>
-</tr>
-</tbody></table>
-<h1 id="Internship"><a href="#Internship" class="headerlink" title="Internship"></a>Internship</h1><h2 id="Shanghai-Pedawise-Intelligent-Technology-Co-Ltd-Software-Development-Engineer-Intern"><a href="#Shanghai-Pedawise-Intelligent-Technology-Co-Ltd-Software-Development-Engineer-Intern" class="headerlink" title="Shanghai Pedawise Intelligent Technology Co., Ltd. | Software Development Engineer Intern"></a>Shanghai Pedawise Intelligent Technology Co., Ltd. | Software Development Engineer Intern</h2><p><strong>2020.8-2020.10</strong></p>
-<ul>
-<li>Worked with a team to develop RESTful APIs for real-time webpages that displayed data analysis on process flows and product quality from client factories captured via assembly line sensors to optimize production.</li>
-<li>Developed features to enable factories to self-query the quality of products 10,000 times per second using Spring Boot.</li>
-<li>Increased efficiency of web crawling by 150% by upgrading the centralized Scrapy system to a distributed crawling system.</li>
-<li>Analyzed data using factory formulas and saved aggregate data to tables in PostgreSQL.</li>
-<li>Reduced SQL execution time by 40% by optimizing SQL query sentences using horizontal vertical scaling.</li>
-</ul>
-<h2 id="Shanghai-Pudong-Development-Bank-SPDB-Front-End-Engineer-Intern"><a href="#Shanghai-Pudong-Development-Bank-SPDB-Front-End-Engineer-Intern" class="headerlink" title="Shanghai Pudong Development Bank (SPDB) | Front End Engineer Intern"></a>Shanghai Pudong Development Bank (SPDB) | Front End Engineer Intern</h2><p><strong>2021.3-2021.5</strong></p>
-<ul>
-<li>Co-developed a new version of the banking home page with a concise layout and custom features that enabled all 30MM users to easily access and navigate the SPDB application using React Native.</li>
-<li>Created new features including a rank list of the trending stocks and a carousel to display a range of pictures. </li>
-<li>Optimized the mobile application experience by implementing a resource package to enable users to view their appointment information, bills, and coupons offline.    </li>
-<li>Resolved 10+ memory leaks caused by React Native code as a member of the SPDB memory leak monitor project.</li>
-<li>Improved the loading speed of H5 pages by 50% by leveraging the pre-renderer plugin.</li>
-</ul>
-<h2 id="ByteDance-Xigua-Video-Android-Development-Intern"><a href="#ByteDance-Xigua-Video-Android-Development-Intern" class="headerlink" title="ByteDance - Xigua Video | Android Development Intern"></a>ByteDance - Xigua Video | Android Development Intern</h2><p><strong>2021.7-2021.11</strong></p>
-<ul>
-<li>Led a project to improve the accessibility of the Xigua Video android application with Android accessibility APIs that received verification from the Ministry of Industry and Information Technology of China.</li>
-<li>Cooperated with the UI, R&amp;D, and QA teams and ByteDance’s Accessibility Association to define and set up accessibility development standards and create a new accessible UI.</li>
-<li>Worked with the QA team to implement a new testing process for checking the accessibility of all the features before release with both automatic accessibility auditor and manual testing. </li>
-<li>Implemented mandatory readable descriptions, a click event standard, and a focus standard that enables users to swipe from left to right to navigate from different elements like buttons or images. </li>
-<li>Led the modification of 50+ pages of the Xigua Video application to improve the accessibility of older features.</li>
-<li>Improved the loading speed of pictures by 15% and reduced memory usage by 20% by refactoring the banner selector of the personal home page within the application.</li>
-<li>Redesigned a new account rebinding system to help users change to a new phone number using Java and Kotlin.</li>
-<li>Introduced a new risk control system with the Data Analysis team that supported third-party rebinding and reduced accounts account hacks by 95%, false bans by 50%, and overall negative user feedback by 70%.</li>
-</ul>
-<h1 id="Award"><a href="#Award" class="headerlink" title="Award"></a>Award</h1><table>
-<thead>
-<tr>
-<th align="center">Name of Award</th>
-<th align="center">Data</th>
-<th align="center">Level</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Silver Award, The 2018 ACM-ICPC Asia Regional Contest Xuzhou Site</td>
-<td align="center">28/Oct/2018</td>
-<td align="center">International</td>
-</tr>
-<tr>
-<td align="center">Bronze Award, The 2018 China Collegiate Programming Contest, Qinhuangdao Site</td>
-<td align="center">27/Sep/2018</td>
-<td align="center">National</td>
-</tr>
-<tr>
-<td align="center">Silver Award, The 2018 ACM-ICPC China Shanghai Metropolitan Invitational Contest</td>
-<td align="center">21/Jul/2018</td>
-<td align="center">National</td>
-</tr>
-<tr>
-<td align="center">Silver Award, The 2018 Shanghai STEED Programming Contest</td>
-<td align="center">09/Jun/2018</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">The First Prize, The “Yoozoo Cup” Shanghai University Program Design Invitational Competition &amp; the 10th Program Design Competition of East China Normal University (Professional Group)</td>
-<td align="center">12/May/2018</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">Bronze Award, The 2017 Shanghai STEED Programming Contest</td>
-<td align="center">09/Jul/2017</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">Silver Award, The 2017 Shanghai STEED Programming Contest</td>
-<td align="center">03/Jun/2017</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">The Third Prize, The “Yoozoo Cup” Shanghai University Program Design Invitational Competition &amp; the 9th Program Design Competition of East China Normal University (Professional Group)</td>
-<td align="center">20/May/2017</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">Gold Award, The 2018 ACM-ICPC Contest On Campus of Donghua University</td>
-<td align="center">09/Jun/2018</td>
-<td align="center">College-level</td>
-</tr>
-<tr>
-<td align="center">Silver Award, The 2017 ACM-ICPC Friendly Contest On Campus</td>
-<td align="center">29/Dec/2017</td>
-<td align="center">College-level</td>
-</tr>
-<tr>
-<td align="center">Gold Award, The 2017 ACM-ICPC Contest On Campus</td>
-<td align="center">03/Jun/2017</td>
-<td align="center">College-level</td>
-</tr>
-</tbody></table>
-<h1 id="Project-Experience"><a href="#Project-Experience" class="headerlink" title="Project Experience"></a>Project Experience</h1><h2 id="Application-of-Machine-Learning-in-Computer-Network-Online-University-of-Chicago"><a href="#Application-of-Machine-Learning-in-Computer-Network-Online-University-of-Chicago" class="headerlink" title="Application of Machine Learning in Computer Network(Online) | University of Chicago"></a>Application of Machine Learning in Computer Network(Online) | University of Chicago</h2><p>Student Researcher; Advisor: Prof. Nick Feamster</p>
-<ul>
-<li>Conducted the network traffic classification of DNS over HTTPS</li>
-<li>Searched and studied a variety of papers to find the appropriate model</li>
-<li>Used autoencoder to preprocess the data</li>
-</ul>
-<h2 id="Research-on-Chess-Algorithms-based-on-Factor-Space-Donghua-University"><a href="#Research-on-Chess-Algorithms-based-on-Factor-Space-Donghua-University" class="headerlink" title="Research on Chess Algorithms based on Factor Space | Donghua University"></a>Research on Chess Algorithms based on Factor Space | Donghua University</h2><p>Thesis; Advisor: Prof: Hongjian Wang</p>
-<ul>
-<li>Combined the theory of factor space with the threat sequence algorithm established by Victor Allis, and proposed a new tic-factor space based tic-tac-board algorithm.</li>
-<li>Used the idea of dynamic programming to prove the correctness of the algorithm; designed two methods to compare the correctness of the algorithm in tic-tac-toe.</li>
-<li>Found methods to greatly improve the accuracy of the algorithm from the perspectives of special case treatment and algorithm search depth.</li>
-</ul>
-<h1 id="Skill"><a href="#Skill" class="headerlink" title="Skill"></a>Skill</h1><p>Excellent with: Programming Language(C, C++, Java, Kotlin, Javascript), Data Structure, Algorithm, IDE: (IDEA, Codeblocks, VS code)<br><br>Proficient in: Programming Language(python, HTML, CSS, SQL, nodejs, Typescript), IDE: (Pycharm, sublime), Database: (MySQL, Oracle), FrameWork:(React Native, Vue, Spring Boot)<br><br>Experienced with: Programming Language(Go, Matlab), FrameWork: (Tensorflow, Pytorch), UML</p>
-
+          <h1 class="post-title" itemprop="name headline">POJ - 1743 Musical Theme(不可重叠最长重复子串)</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-10T11:58:21-08:00">
+                2017-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index">
+                    <span itemprop="name">字符串</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/" itemprop="url" rel="index">
+                    <span itemprop="name">后缀数组</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题是后缀数组一个常见的应用，不可重叠最长重复子串。后缀数组的基本知识参考<a href="https://manushi98.github.io/post/978515b9.html">SPOJ - SUBST1 New Distinct Substrings</a>一文。对于一个不可重叠最长子串的问题，我们首先对长度二分答案，然后对height数组分段，连续的height值&gt;=k的我们分在一起，然后记录段内sa的最小值和最大值，如果两者的差大于等于k+1（题意要求重复子串之间要有一个字符的间隔）那么现在的k就是符合条件的。需要注意的是这道题卡了cin,cout。</p>
+<span id="more"></span>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 1e9</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ms(a,val) memset(a,val,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson(x) (x&lt;&lt;1)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson(x) (x&lt;&lt;1+1)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n, k;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX_N = <span class="number">20010</span>;</span><br><span class="line"><span class="keyword">int</span> ranks[MAX_N + <span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> tmp[MAX_N + <span class="number">1</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>;<span class="keyword">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span> (ch&lt;<span class="string">&#x27;0&#x27;</span> || ch&gt;<span class="string">&#x27;9&#x27;</span>) &#123; <span class="keyword">if</span> (ch == <span class="string">&#x27;-&#x27;</span>)f = <span class="number">-1</span>;ch = <span class="built_in">getchar</span>(); &#125;</span><br><span class="line">	<span class="keyword">while</span> (ch &gt;= <span class="string">&#x27;0&#x27;</span>&amp;&amp;ch &lt;= <span class="string">&#x27;9&#x27;</span>) &#123; x = x * <span class="number">10</span> + ch - <span class="string">&#x27;0&#x27;</span>;ch = <span class="built_in">getchar</span>(); &#125;</span><br><span class="line">	<span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//倍增计算rank</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">compare_sa</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (ranks[i] != ranks[j])<span class="keyword">return</span> ranks[i]&lt;ranks[j];</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">int</span> ri = i + k &lt;= n ? ranks[i + k] : <span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">int</span> rj = j + k &lt;= n ? ranks[j + k] : <span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">return</span> ri&lt;rj;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">construct_sa</span><span class="params">(<span class="keyword">int</span> S[], <span class="keyword">int</span> *sa)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//n = strlen(S);</span></span><br><span class="line">	<span class="comment">//对长度为1的字符直接使用ascii码,长度为0的后缀rank值为-1</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;= n;i++) &#123;</span><br><span class="line">		sa[i] = i;</span><br><span class="line">		ranks[i] = i&lt;n ? S[i] : <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (k = <span class="number">1</span>;k &lt;= n;k *= <span class="number">2</span>) &#123;</span><br><span class="line">		<span class="built_in">sort</span>(sa, sa + n + <span class="number">1</span>, compare_sa);</span><br><span class="line">		tmp[sa[<span class="number">0</span>]] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) &#123;</span><br><span class="line">			tmp[sa[i]] = tmp[sa[i - <span class="number">1</span>]] + (<span class="built_in">compare_sa</span>(sa[i - <span class="number">1</span>], sa[i]) ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;= n;i++) &#123;</span><br><span class="line">			ranks[i] = tmp[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">construct_lcp</span><span class="params">(<span class="keyword">int</span> S[], <span class="keyword">int</span> *sa, <span class="keyword">int</span> *lcp)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//int n = strlen(S);</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;= n;i++)ranks[sa[i]] = i;</span><br><span class="line">	<span class="keyword">int</span> h = <span class="number">0</span>;</span><br><span class="line">	lcp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;n;i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> j = sa[ranks[i] - <span class="number">1</span>];</span><br><span class="line">		<span class="keyword">if</span> (h&gt;<span class="number">0</span>)h--;</span><br><span class="line">		<span class="keyword">for</span> (;j + h&lt;n&amp;&amp;i + h&lt;n;h++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (S[j + h] != S[i + h])<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		lcp[ranks[i] - <span class="number">1</span>] = h;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">int</span> len,<span class="keyword">int</span> *sa,<span class="keyword">int</span> *lcp)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> mins = n + <span class="number">5</span>, maxs = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;= n;i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (lcp[i] &gt;= len) &#123;</span><br><span class="line">			mins = <span class="built_in">min</span>(mins, sa[i]), maxs = <span class="built_in">max</span>(maxs, sa[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			mins = <span class="built_in">min</span>(mins, sa[i]), maxs = <span class="built_in">max</span>(maxs, sa[i]);</span><br><span class="line">			<span class="keyword">if</span> (maxs - mins &gt;= len + <span class="number">1</span>)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">			mins = n + <span class="number">5</span>, maxs = <span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//ios::sync_with_stdio(false), cin.tie(0), cout.tie(0);</span></span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n)!=EOF) &#123;</span><br><span class="line">		<span class="keyword">if</span> (n == <span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">int</span> a[MAX_N], diff[MAX_N];</span><br><span class="line">		<span class="keyword">int</span> lcp[MAX_N + <span class="number">1</span>], sa[MAX_N + <span class="number">1</span>];</span><br><span class="line">		<span class="built_in">ms</span>(lcp, <span class="number">0</span>), <span class="built_in">ms</span>(sa, <span class="number">0</span>), <span class="built_in">ms</span>(ranks, <span class="number">0</span>), <span class="built_in">ms</span>(tmp, <span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++)a[i]=<span class="built_in">read</span>();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n - <span class="number">1</span>;i++)diff[i] = a[i + <span class="number">1</span>] - a[i]+<span class="number">88</span>;</span><br><span class="line">		n--;</span><br><span class="line">		<span class="built_in">construct_sa</span>(diff, sa);</span><br><span class="line">		<span class="built_in">construct_lcp</span>(diff, sa, lcp);</span><br><span class="line">		<span class="keyword">int</span> left = <span class="number">3</span>, right = n / <span class="number">2</span>,ans;</span><br><span class="line">		<span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">			<span class="keyword">int</span> mid = (left + right)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">judge</span>(mid, sa, lcp))ans = mid,left=mid+<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">else</span> right = mid - <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (left == <span class="number">3</span>)<span class="built_in">printf</span>(<span class="string">&quot;0\n&quot;</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans+<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/" rel="tag"># 后缀数组</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/08/POJ%20-%201330%20Nearest%20Common%20Ancestors(%E5%80%8D%E5%A2%9ELCA)/" rel="next" title="POJ - 1330 Nearest Common Ancestors(倍增LCA)">
+                <i class="fa fa-chevron-left"></i> POJ - 1330 Nearest Common Ancestors(倍增LCA)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/13/BZOJ%20-%202038%20%E5%B0%8FZ%E7%9A%84%E8%A2%9C%E5%AD%90/" rel="prev" title="BZOJ - 2038 小Z的袜子">
+                BZOJ - 2038 小Z的袜子 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -593,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Education"><span class="nav-number">1.</span> <span class="nav-text">Education</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Internship"><span class="nav-number">2.</span> <span class="nav-text">Internship</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shanghai-Pedawise-Intelligent-Technology-Co-Ltd-Software-Development-Engineer-Intern"><span class="nav-number">2.1.</span> <span class="nav-text">Shanghai Pedawise Intelligent Technology Co., Ltd. | Software Development Engineer Intern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shanghai-Pudong-Development-Bank-SPDB-Front-End-Engineer-Intern"><span class="nav-number">2.2.</span> <span class="nav-text">Shanghai Pudong Development Bank (SPDB) | Front End Engineer Intern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ByteDance-Xigua-Video-Android-Development-Intern"><span class="nav-number">2.3.</span> <span class="nav-text">ByteDance - Xigua Video | Android Development Intern</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Award"><span class="nav-number">3.</span> <span class="nav-text">Award</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Project-Experience"><span class="nav-number">4.</span> <span class="nav-text">Project Experience</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Application-of-Machine-Learning-in-Computer-Network-Online-University-of-Chicago"><span class="nav-number">4.1.</span> <span class="nav-text">Application of Machine Learning in Computer Network(Online) | University of Chicago</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Research-on-Chess-Algorithms-based-on-Factor-Space-Donghua-University"><span class="nav-number">4.2.</span> <span class="nav-text">Research on Chess Algorithms based on Factor Space | Donghua University</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Skill"><span class="nav-number">5.</span> <span class="nav-text">Skill</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>

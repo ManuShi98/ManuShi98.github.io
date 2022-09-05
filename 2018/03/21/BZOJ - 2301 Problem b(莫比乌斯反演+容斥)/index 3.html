@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="ManuShi98's Blog" />
+  <meta name="keywords" content="莫比乌斯反演," />
 
 
 
@@ -79,17 +79,23 @@
 
 
 
-<meta name="description" content="Hi, I’m Manu Shi. I used to be an ACM contester in Donghua University from 2016 to 2018. I have experience about lots of areas like Front End(Vue &amp; React), Back End(Spring Boot &amp; Node.js), App">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About me">
-<meta property="og:url" content="https://manushi98.github.io/about/index.html">
+<meta name="description" content="思路莫比乌斯反演入门题，看popoqqq的ppt看了好久（本篇博客也是参考了很多他的ppt，然后加上了一些自己的理解），深深感到OI大佬的厉害Orz。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BZOJ - 2301 Problem b(莫比乌斯反演+容斥)">
+<meta property="og:url" content="https://manushi98.github.io/2018/03/21/BZOJ%20-%202301%20Problem%20b(%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94+%E5%AE%B9%E6%96%A5)/index.html">
 <meta property="og:site_name" content="ManuShi98">
-<meta property="og:description" content="Hi, I’m Manu Shi. I used to be an ACM contester in Donghua University from 2016 to 2018. I have experience about lots of areas like Front End(Vue &amp; React), Back End(Spring Boot &amp; Node.js), App">
+<meta property="og:description" content="思路莫比乌斯反演入门题，看popoqqq的ppt看了好久（本篇博客也是参考了很多他的ppt，然后加上了一些自己的理解），深深感到OI大佬的厉害Orz。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-02T01:20:37.000Z">
-<meta property="article:modified_time" content="2022-09-05T03:37:08.978Z">
+<meta property="og:image" content="https://i.loli.net/2020/12/14/m7y6srRMPBYpzIK.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/14/3rSz9Klh2OYufGs.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/12/14/4b1JAhpMQZNzUkq.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/14/kizwY1xlNRFmbtI.jpg">
+<meta property="article:published_time" content="2018-03-21T18:10:04.000Z">
+<meta property="article:modified_time" content="2022-08-30T19:34:05.973Z">
 <meta property="article:author" content="ManuShi98">
+<meta property="article:tag" content="莫比乌斯反演">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/12/14/m7y6srRMPBYpzIK.png">
 
 
 
@@ -119,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://manushi98.github.io/about/"/>
+  <link rel="canonical" href="https://manushi98.github.io/2018/03/21/BZOJ - 2301 Problem b(莫比乌斯反演+容斥)/"/>
 
 
 
 
 
-  <title>About me | ManuShi98</title>
+  <title>BZOJ - 2301 Problem b(莫比乌斯反演+容斥) | ManuShi98</title>
   
 
 
@@ -294,157 +300,201 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/03/21/BZOJ%20-%202301%20Problem%20b(%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94+%E5%AE%B9%E6%96%A5)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">About me</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>Hi, I’m Manu Shi. I used to be an ACM contester in Donghua University from 2016 to 2018. I have experience about lots of areas like Front End(Vue &amp; React), Back End(Spring Boot &amp; Node.js), Application(Android), Machine Learning(pytorch, tensorflow…) and DevOps. Now I have a strong interest in distributed system and hope to use algorithm I learnt to make distributed system work more efficient.</p>
-<h1 id="Education"><a href="#Education" class="headerlink" title="Education"></a>Education</h1><table>
-<thead>
-<tr>
-<th align="center">School</th>
-<th align="center">Date</th>
-<th align="center">Degree</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Donghua University, Shanghai, China</td>
-<td align="center">Sep 2016-Jul 2020</td>
-<td align="center">B.E. in Software Engineering</td>
-</tr>
-<tr>
-<td align="center">University of Southern California, Los Angeles, U.S.A</td>
-<td align="center">Jan 2022-Dec 2023</td>
-<td align="center">M.S. in Computer Science</td>
-</tr>
-</tbody></table>
-<h1 id="Internship"><a href="#Internship" class="headerlink" title="Internship"></a>Internship</h1><h2 id="Shanghai-Pedawise-Intelligent-Technology-Co-Ltd-Software-Development-Engineer-Intern"><a href="#Shanghai-Pedawise-Intelligent-Technology-Co-Ltd-Software-Development-Engineer-Intern" class="headerlink" title="Shanghai Pedawise Intelligent Technology Co., Ltd. | Software Development Engineer Intern"></a>Shanghai Pedawise Intelligent Technology Co., Ltd. | Software Development Engineer Intern</h2><p><strong>2020.8-2020.10</strong></p>
-<ul>
-<li>Worked with a team to develop RESTful APIs for real-time webpages that displayed data analysis on process flows and product quality from client factories captured via assembly line sensors to optimize production.</li>
-<li>Developed features to enable factories to self-query the quality of products 10,000 times per second using Spring Boot.</li>
-<li>Increased efficiency of web crawling by 150% by upgrading the centralized Scrapy system to a distributed crawling system.</li>
-<li>Analyzed data using factory formulas and saved aggregate data to tables in PostgreSQL.</li>
-<li>Reduced SQL execution time by 40% by optimizing SQL query sentences using horizontal vertical scaling.</li>
-</ul>
-<h2 id="Shanghai-Pudong-Development-Bank-SPDB-Front-End-Engineer-Intern"><a href="#Shanghai-Pudong-Development-Bank-SPDB-Front-End-Engineer-Intern" class="headerlink" title="Shanghai Pudong Development Bank (SPDB) | Front End Engineer Intern"></a>Shanghai Pudong Development Bank (SPDB) | Front End Engineer Intern</h2><p><strong>2021.3-2021.5</strong></p>
-<ul>
-<li>Co-developed a new version of the banking home page with a concise layout and custom features that enabled all 30MM users to easily access and navigate the SPDB application using React Native.</li>
-<li>Created new features including a rank list of the trending stocks and a carousel to display a range of pictures. </li>
-<li>Optimized the mobile application experience by implementing a resource package to enable users to view their appointment information, bills, and coupons offline.    </li>
-<li>Resolved 10+ memory leaks caused by React Native code as a member of the SPDB memory leak monitor project.</li>
-<li>Improved the loading speed of H5 pages by 50% by leveraging the pre-renderer plugin.</li>
-</ul>
-<h2 id="ByteDance-Xigua-Video-Android-Development-Intern"><a href="#ByteDance-Xigua-Video-Android-Development-Intern" class="headerlink" title="ByteDance - Xigua Video | Android Development Intern"></a>ByteDance - Xigua Video | Android Development Intern</h2><p><strong>2021.7-2021.11</strong></p>
-<ul>
-<li>Led a project to improve the accessibility of the Xigua Video android application with Android accessibility APIs that received verification from the Ministry of Industry and Information Technology of China.</li>
-<li>Cooperated with the UI, R&amp;D, and QA teams and ByteDance’s Accessibility Association to define and set up accessibility development standards and create a new accessible UI.</li>
-<li>Worked with the QA team to implement a new testing process for checking the accessibility of all the features before release with both automatic accessibility auditor and manual testing. </li>
-<li>Implemented mandatory readable descriptions, a click event standard, and a focus standard that enables users to swipe from left to right to navigate from different elements like buttons or images. </li>
-<li>Led the modification of 50+ pages of the Xigua Video application to improve the accessibility of older features.</li>
-<li>Improved the loading speed of pictures by 15% and reduced memory usage by 20% by refactoring the banner selector of the personal home page within the application.</li>
-<li>Redesigned a new account rebinding system to help users change to a new phone number using Java and Kotlin.</li>
-<li>Introduced a new risk control system with the Data Analysis team that supported third-party rebinding and reduced accounts account hacks by 95%, false bans by 50%, and overall negative user feedback by 70%.</li>
-</ul>
-<h1 id="Award"><a href="#Award" class="headerlink" title="Award"></a>Award</h1><table>
-<thead>
-<tr>
-<th align="center">Name of Award</th>
-<th align="center">Data</th>
-<th align="center">Level</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Silver Award, The 2018 ACM-ICPC Asia Regional Contest Xuzhou Site</td>
-<td align="center">28/Oct/2018</td>
-<td align="center">International</td>
-</tr>
-<tr>
-<td align="center">Bronze Award, The 2018 China Collegiate Programming Contest, Qinhuangdao Site</td>
-<td align="center">27/Sep/2018</td>
-<td align="center">National</td>
-</tr>
-<tr>
-<td align="center">Silver Award, The 2018 ACM-ICPC China Shanghai Metropolitan Invitational Contest</td>
-<td align="center">21/Jul/2018</td>
-<td align="center">National</td>
-</tr>
-<tr>
-<td align="center">Silver Award, The 2018 Shanghai STEED Programming Contest</td>
-<td align="center">09/Jun/2018</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">The First Prize, The “Yoozoo Cup” Shanghai University Program Design Invitational Competition &amp; the 10th Program Design Competition of East China Normal University (Professional Group)</td>
-<td align="center">12/May/2018</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">Bronze Award, The 2017 Shanghai STEED Programming Contest</td>
-<td align="center">09/Jul/2017</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">Silver Award, The 2017 Shanghai STEED Programming Contest</td>
-<td align="center">03/Jun/2017</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">The Third Prize, The “Yoozoo Cup” Shanghai University Program Design Invitational Competition &amp; the 9th Program Design Competition of East China Normal University (Professional Group)</td>
-<td align="center">20/May/2017</td>
-<td align="center">Municipal</td>
-</tr>
-<tr>
-<td align="center">Gold Award, The 2018 ACM-ICPC Contest On Campus of Donghua University</td>
-<td align="center">09/Jun/2018</td>
-<td align="center">College-level</td>
-</tr>
-<tr>
-<td align="center">Silver Award, The 2017 ACM-ICPC Friendly Contest On Campus</td>
-<td align="center">29/Dec/2017</td>
-<td align="center">College-level</td>
-</tr>
-<tr>
-<td align="center">Gold Award, The 2017 ACM-ICPC Contest On Campus</td>
-<td align="center">03/Jun/2017</td>
-<td align="center">College-level</td>
-</tr>
-</tbody></table>
-<h1 id="Project-Experience"><a href="#Project-Experience" class="headerlink" title="Project Experience"></a>Project Experience</h1><h2 id="Application-of-Machine-Learning-in-Computer-Network-Online-University-of-Chicago"><a href="#Application-of-Machine-Learning-in-Computer-Network-Online-University-of-Chicago" class="headerlink" title="Application of Machine Learning in Computer Network(Online) | University of Chicago"></a>Application of Machine Learning in Computer Network(Online) | University of Chicago</h2><p>Student Researcher; Advisor: Prof. Nick Feamster</p>
-<ul>
-<li>Conducted the network traffic classification of DNS over HTTPS</li>
-<li>Searched and studied a variety of papers to find the appropriate model</li>
-<li>Used autoencoder to preprocess the data</li>
-</ul>
-<h2 id="Research-on-Chess-Algorithms-based-on-Factor-Space-Donghua-University"><a href="#Research-on-Chess-Algorithms-based-on-Factor-Space-Donghua-University" class="headerlink" title="Research on Chess Algorithms based on Factor Space | Donghua University"></a>Research on Chess Algorithms based on Factor Space | Donghua University</h2><p>Thesis; Advisor: Prof: Hongjian Wang</p>
-<ul>
-<li>Combined the theory of factor space with the threat sequence algorithm established by Victor Allis, and proposed a new tic-factor space based tic-tac-board algorithm.</li>
-<li>Used the idea of dynamic programming to prove the correctness of the algorithm; designed two methods to compare the correctness of the algorithm in tic-tac-toe.</li>
-<li>Found methods to greatly improve the accuracy of the algorithm from the perspectives of special case treatment and algorithm search depth.</li>
-</ul>
-<h1 id="Skill"><a href="#Skill" class="headerlink" title="Skill"></a>Skill</h1><p>Excellent with: Programming Language(C, C++, Java, Kotlin, Javascript), Data Structure, Algorithm, IDE: (IDEA, Codeblocks, VS code)<br><br>Proficient in: Programming Language(python, HTML, CSS, SQL, nodejs, Typescript), IDE: (Pycharm, sublime), Database: (MySQL, Oracle), FrameWork:(React Native, Vue, Spring Boot)<br><br>Experienced with: Programming Language(Go, Matlab), FrameWork: (Tensorflow, Pytorch), UML</p>
-
+          <h1 class="post-title" itemprop="name headline">BZOJ - 2301 Problem b(莫比乌斯反演+容斥)</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T11:10:04-07:00">
+                2018-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/" itemprop="url" rel="index">
+                    <span itemprop="name">莫比乌斯反演</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>莫比乌斯反演入门题，看popoqqq的ppt看了好久（本篇博客也是参考了很多他的ppt，然后加上了一些自己的理解），深深感到OI大佬的厉害Orz。</p>
+<span id="more"></span>
+<h3 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h3><h4 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h4><p>首先我们考虑这样一个函数：<br><img src="https://i.loli.net/2020/12/14/m7y6srRMPBYpzIK.png" alt="Mobius-function-1"><br>由F(n)的定义，我们可以得到诸如<br>F(1)=f(1)<br>F(2)=f(1)+f(2)<br>F(3)=f(1)+f(3)<br>F(4)=f(1)+f(2)+f(4)<br>F(5)=f(1)+f(5)<br>F(6)=f(1)+f(2)+f(3)+f(6)<br>的式子。从而我们能从F(n)推得f(n)<br>f(1)=F(1)<br>f(2)=F(2)-F(1)<br>f(3)=F(3)-F(1)<br>f(4)=F(4)-F(2)<br>f(5)=F(5)-F(1)<br>f(6)=F(6)-F(3)-F(2)+F(1)<br>然后一位大牛从这个式子里看出了个规律：<br><img src="https://i.loli.net/2020/12/14/3rSz9Klh2OYufGs.jpg" alt="Mobius-function-2"><br>其中μ(d)为莫比乌斯函数，这就是莫比乌斯反演公式，正确性的证明见popoqqq的ppt</p>
+<h4 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h4><p>莫比乌斯函数μ(d)的定义为:</p>
+<ol>
+<li>d=1,μ(d)=1</li>
+<li>d=p1*p2*…*pk为互异素数（互不相同的素数），那么μ(d)=(-1)^k</li>
+<li>其他情况μ(d)=0</li>
+</ol>
+<h4 id="莫比乌斯函数的性质"><a href="#莫比乌斯函数的性质" class="headerlink" title="莫比乌斯函数的性质"></a>莫比乌斯函数的性质</h4><ol>
+<li>当n=1时，μ(d)的前缀和为1，否则为0，证明见popoqqq的ppt</li>
+<li>莫比乌斯函数是积性函数，所以我们可以使用线性筛来得到莫比乌斯函数（使用定义的第二条）</li>
+</ol>
+<h4 id="什么情况适合使用莫比乌斯反演"><a href="#什么情况适合使用莫比乌斯反演" class="headerlink" title="什么情况适合使用莫比乌斯反演"></a>什么情况适合使用莫比乌斯反演</h4><p>如果对一个函数f(n)，我们没法直接求出他的值，但我们能够求出他的约束和F(n)或者倍数和，那么我们就可以考虑莫比乌斯反演。接下来我们用bzoj2301来解释如何使用莫比乌斯反演。</p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>因为直接求这个询问非常麻烦，我们使用容斥原理将一个询问拆成4个，定义一个cal(a,b,k)函数为x属于[1,a],y属于[1,b]时gcd(x,y)=k数对的个数。那么我们就能将这个询问拆分为cal(b,d,k)-cal(a-1,d,k)-cal(b,c-1,k)+cal(a-1,c-1,k)。那么接下来我们怎么构造莫比乌斯反演？题目问的是x属于[1,n],y属于[1,m],gcd(x,y)=k的数对的个数，我们把这个问题扩张为x属于[1,n],y属于[1,m],k|gcd(x,y)（可以认为gcd(x,y)是k的倍数）数对的个数。对于后一个问题我们可以考虑对n来说k的倍数有几个，即floor(n/k),对y进行同样的考虑，所以我们得到了F(k)的表达式为floor(n/k)*floor(m/k)。这里我们能看出什么？我们碰到类似的这种题，我们要尽可能把F(k)设置为一个能够轻松得到的函数，而一般来说k的倍数/约数都是比较容易能够求得的，同时得到的函数F(k)和f(k)的关系也符合莫比乌斯反演，所以碰到类似的题要是没有思路的话尝试下倍数和和约数和是一个不错的选择。那么接下来我们就得到了莫比乌斯反演公式：<br><img src="https://i.loli.net/2020/12/14/4b1JAhpMQZNzUkq.png" alt="Mobius-function-3"><br>通过枚举k的倍数我们能够在O(n)中解决问题。但是考虑到询问有5w个，最后的复杂度O(n^2)是不能接受的。考虑优化<br>通过观察发现floor(n/d)这个式子，我们发现取值最多有2根号n个取值。那么对floor(n/d)*floor(m/d)我们有2（根号n+根号m）个取值。注意这里不是两者相乘。为什么？我们考虑在d变化过程中n/d和m/d变化的过程。借用《POI XIV Stage.1 Queries Zap 解题报告》中的图：<br><img src="https://i.loli.net/2020/12/14/kizwY1xlNRFmbtI.jpg" alt="Mobius-example-1"><br>我们把横轴看成d，每个竖杠代表着值的改变。我想很显然地我们能感受到为什么这个二元组只有2（根号n+根号m）个取值。所以我们枚举取值，并对莫比乌斯函数求一个前缀和，就能在O(sqrt(n))的时间内得到答案。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    a/=k,b/=k;</span><br><span class="line">    <span class="keyword">int</span> t=<span class="built_in">min</span>(a,b),ans=<span class="number">0</span>,last;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=t;i=last+<span class="number">1</span>)&#123;</span><br><span class="line">        last=<span class="built_in">min</span>(a/(a/i),b/(b/i));</span><br><span class="line">        ans+=(a/i)*(b/i)*(sum[last]-sum[i<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上是枚举取值的代码。第五行是为了找出两个比值结果中的较小值。我个人理解实际上不除k的话似乎不会影响算法的正确性？似乎只是为了减少枚举的次数？我也不是很确定，如果有大佬知道的话望周知，谢谢！</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/fbec9c63ba1aa8114431d9ac.html">莫比乌斯反演 - By popoqqq</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/candy99/p/6209502.html">BZOJ2301: [HAOI2011]Problem b[莫比乌斯反演 容斥原理]【学习笔记】</a><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ms(a,val) memset(a,val,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7fffffff</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">50005</span>;</span><br><span class="line"><span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> mobi[MAXN],vis[MAXN],prime[MAXN],sum[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">prework</span><span class="params">()</span></span>&#123;</span><br><span class="line">    mobi[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;MAXN;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis[i])&#123;</span><br><span class="line">            prime[cnt++]=i;</span><br><span class="line">            mobi[i]=<span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;cnt&amp;&amp;i*prime[j]&lt;MAXN;j++)&#123;</span><br><span class="line">            vis[i*prime[j]]=<span class="number">1</span>;</span><br><span class="line">            <span class="comment">//if there exists more than one same prime number, the value of the function is 0.</span></span><br><span class="line">            <span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>)&#123;</span><br><span class="line">                mobi[i*prime[j]]=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            mobi[i*prime[j]]=-mobi[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sum[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;MAXN;i++)sum[i]=sum[i<span class="number">-1</span>]+mobi[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//cal(b,d,k)-cal(a-1,d)-cal(b,c-1,k)+cal(a-1,c-1,k)</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    a/=k,b/=k;</span><br><span class="line">    <span class="keyword">int</span> t=<span class="built_in">min</span>(a,b),ans=<span class="number">0</span>,last;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=t;i=last+<span class="number">1</span>)&#123;</span><br><span class="line">        last=<span class="built_in">min</span>(a/(a/i),b/(b/i));</span><br><span class="line">        ans+=(a/i)*(b/i)*(sum[last]-sum[i<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c,<span class="keyword">int</span> d,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">cal</span>(b,d,k)-<span class="built_in">cal</span>(a<span class="number">-1</span>,d,k)-<span class="built_in">cal</span>(b,c<span class="number">-1</span>,k)+<span class="built_in">cal</span>(a<span class="number">-1</span>,c<span class="number">-1</span>,k);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="keyword">int</span> a,b,c,d,k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;t);</span><br><span class="line">    <span class="built_in">prework</span>();</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d%d&quot;</span>,&amp;a,&amp;b,&amp;c,&amp;d,&amp;k);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">solve</span>(a,b,c,d,k));</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/" rel="tag"># 莫比乌斯反演</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/16/HDU%20-%203853%20LOOPS(%E6%A6%82%E7%8E%87dp)/" rel="next" title="HDU - 3853 LOOPS(概率dp)">
+                <i class="fa fa-chevron-left"></i> HDU - 3853 LOOPS(概率dp)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/28/CodeForces%20Gym%20-%20101615D%20Rainbow%20Roads(%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86)/" rel="prev" title="CodeForces Gym - 101615D Rainbow Roads(树上差分)">
+                CodeForces Gym - 101615D Rainbow Roads(树上差分) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -593,7 +643,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Education"><span class="nav-number">1.</span> <span class="nav-text">Education</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Internship"><span class="nav-number">2.</span> <span class="nav-text">Internship</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shanghai-Pedawise-Intelligent-Technology-Co-Ltd-Software-Development-Engineer-Intern"><span class="nav-number">2.1.</span> <span class="nav-text">Shanghai Pedawise Intelligent Technology Co., Ltd. | Software Development Engineer Intern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shanghai-Pudong-Development-Bank-SPDB-Front-End-Engineer-Intern"><span class="nav-number">2.2.</span> <span class="nav-text">Shanghai Pudong Development Bank (SPDB) | Front End Engineer Intern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ByteDance-Xigua-Video-Android-Development-Intern"><span class="nav-number">2.3.</span> <span class="nav-text">ByteDance - Xigua Video | Android Development Intern</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Award"><span class="nav-number">3.</span> <span class="nav-text">Award</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Project-Experience"><span class="nav-number">4.</span> <span class="nav-text">Project Experience</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Application-of-Machine-Learning-in-Computer-Network-Online-University-of-Chicago"><span class="nav-number">4.1.</span> <span class="nav-text">Application of Machine Learning in Computer Network(Online) | University of Chicago</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Research-on-Chess-Algorithms-based-on-Factor-Space-Donghua-University"><span class="nav-number">4.2.</span> <span class="nav-text">Research on Chess Algorithms based on Factor Space | Donghua University</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Skill"><span class="nav-number">5.</span> <span class="nav-text">Skill</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94"><span class="nav-number">2.</span> <span class="nav-text">莫比乌斯反演</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%AD%90"><span class="nav-number">2.1.</span> <span class="nav-text">引子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%87%BD%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">莫比乌斯函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%87%BD%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">2.3.</span> <span class="nav-text">莫比乌斯函数的性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%83%85%E5%86%B5%E9%80%82%E5%90%88%E4%BD%BF%E7%94%A8%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94"><span class="nav-number">2.4.</span> <span class="nav-text">什么情况适合使用莫比乌斯反演</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="nav-number">3.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">5.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
