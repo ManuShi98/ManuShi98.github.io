@@ -305,6 +305,180 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/10/01/BZOJ%20-%201014%20%E7%81%AB%E6%98%9F%E4%BA%BAprefix(Splay+%E4%BA%8C%E5%88%86+Hash)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/01/BZOJ%20-%201014%20%E7%81%AB%E6%98%9F%E4%BA%BAprefix(Splay+%E4%BA%8C%E5%88%86+Hash)/" itemprop="url">BZOJ - 1014 火星人prefix(Splay+二分+Hash)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-01T22:23:58-07:00">
+                2018-10-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%B9%B3%E8%A1%A1%E6%A0%91/" itemprop="url" rel="index">
+                    <span itemprop="name">平衡树</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%B9%B3%E8%A1%A1%E6%A0%91/Splay/" itemprop="url" rel="index">
+                    <span itemprop="name">Splay</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>对于无修改的LCP，常用的算法是后缀数组/二分+Hash。但当场景转换为带修改的LCP查询时，后缀数组就无能为力了，因为这样每次都要重建一次后缀数组才能知道LCP的值。但对于二分+Hash来说，我们只要能够知道一段字符串的hash即可，而Hash值显然是可以用Splay维护的，同时Splay也同时支持插入和修改操作。对于题目要求的三种操作，我们这样实现：</p>
+<ol>
+<li>查询操作：二分长度，令两个位置为x,y。我们查找排行为x-1和x+len的两个节点，令其为pre和nxt。将pre splay到根(pre-&gt;splay())，nxt splay到pre的儿子(nxt-&gt;splay(pre))。那么nxt的左儿子就是我们需要的区间。由于旋转操作时维护了Hash值，所以我们直接取该节点上维护的Hash值就是这段区间的Hash值。对于y的Hash值同理，然后比较Hash值就能判断两个字符串是否相等。</li>
+<li>插入操作：查找排行为x和x+1的两个节点，x splay到根，x+1 splay到x的儿子，对x+1的左儿子直接插入即可</li>
+<li>修改操作：找到排行为x的节点直接修改</li>
+</ol>
+<p>需要注意的是由于使用Splay时我们通常会插入头尾两个辅助节点，我们maintain Hash值的时候不能把这两个值算上。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/01/BZOJ%20-%201014%20%E7%81%AB%E6%98%9F%E4%BA%BAprefix(Splay+%E4%BA%8C%E5%88%86+Hash)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/08/31/2017-2018%20ACM-ICPC,%20Asia%20Daejeon%20Regional%20Contest(%E8%AE%AD%E7%BB%83%E6%97%A5%E5%B8%B8)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1717,168 +1891,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/07/12/CodeForces%20-%20956D%20Contact%20ATC(%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/12/CodeForces%20-%20956D%20Contact%20ATC(%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84)/" itemprop="url">CodeForces - 956D Contact ATC(树状数组)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-12T19:42:34-07:00">
-                2018-07-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" itemprop="url" rel="index">
-                    <span itemprop="name">树状数组</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>对于该题，我们建立如下图所示坐标系，横坐标为风速，纵坐标为在该风速下飞机到达0点的时间。那么显然在两条直线有交点的时候表示两架飞机同时到达0点。<br><img src="https://i.loli.net/2020/12/14/5yGFfQLixDs7UCb.jpg" alt="cf956d"><br>虽然知道了这点，但我们不能O(n^2)求直线交，该题期望的是O(nlogn)的解法。在看了杜老师(%%%)的代码后我学到了一种新的姿势：已知多条直线在两个坐标x1,x2(这道题是-w，w)的情况下，我们可以使用树状数组求逆序对的方式来计算直线的交点数量。以本题为例：我们首先定义一个结构体，储存x(坐标的绝对值),v’(考虑风速后的速度),e(通过该值在左端点一样的情况下能够比较右端点),id。我们将-w各个点的值保存在一个vector up中，w保存在另一个vector down中，然后对两个数组根据到零点时间从小到大排序。对每个点我们利用id记录up（左端点）的左边排名，然后对右端点从上往下计算，每次我们查看在该点左端点之前排名的（也就右端点在它上面，左端点在它下面的直线）有几条，利用树状数组来维护这个值即可，最后的和就是我们需要的答案。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/12/CodeForces%20-%20956D%20Contact%20ATC(%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84)/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
  <nav class="pagination">
-   <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
+   <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
  </nav>
 
           </div>
@@ -1926,7 +1943,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
