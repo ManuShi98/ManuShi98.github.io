@@ -407,8 +407,7 @@
       
 
       
-        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>ST表模板</p>
-<span id="more"></span>
+        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>ST表模板<br><span id="more"></span></p>
 <h3 id="ST表"><a href="#ST表" class="headerlink" title="ST表"></a>ST表</h3><p>ST表是rmq的一种实现方式。初始化复杂度O(nlogn)，查询O(1),不支持修改，不能实现区间和(与st表查询方式有关，但我仔细想了想，感觉似乎修改下查询应该能在logn时间里得到区间和)。</p>
 <h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>ST表的初始化用到了倍增的思路。我们令ST[i][j]维护的是从i开始的，长度为2^j的区间，即[i,i+2^j-1]。那么显然有st[i][j]=function(min,max,|,…自选)(st[i][j-1],st[i+2^(j-1)][j-1])。因为st表维护区间的长度都是2的倍数，所以能做到区间合并时不重不漏。</p>
 <h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><p>查询时我们取k=(int)log2(n)。然后求max(st[x][k],st[y-powerOfTwo[k]+1][k])即可。这样的区间实际上是有重叠的，所以这也是为什么我之前说的st表不能处理区间和问题。但是因为在rmq中没有这样的问题，所以我们大可放心使用。</p>

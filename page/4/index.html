@@ -408,7 +408,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>对于该题，我们建立如下图所示坐标系，横坐标为风速，纵坐标为在该风速下飞机到达0点的时间。那么显然在两条直线有交点的时候表示两架飞机同时到达0点。<br><img src="https://i.loli.net/2020/12/14/5yGFfQLixDs7UCb.jpg" alt="cf956d"><br>虽然知道了这点，但我们不能O(n^2)求直线交，该题期望的是O(nlogn)的解法。在看了杜老师(%%%)的代码后我学到了一种新的姿势：已知多条直线在两个坐标x1,x2(这道题是-w，w)的情况下，我们可以使用树状数组求逆序对的方式来计算直线的交点数量。以本题为例：我们首先定义一个结构体，储存x(坐标的绝对值),v’(考虑风速后的速度),e(通过该值在左端点一样的情况下能够比较右端点),id。我们将-w各个点的值保存在一个vector up中，w保存在另一个vector down中，然后对两个数组根据到零点时间从小到大排序。对每个点我们利用id记录up（左端点）的左边排名，然后对右端点从上往下计算，每次我们查看在该点左端点之前排名的（也就右端点在它上面，左端点在它下面的直线）有几条，利用树状数组来维护这个值即可，最后的和就是我们需要的答案。</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>对于该题，我们建立如下图所示坐标系，横坐标为风速，纵坐标为在该风速下飞机到达0点的时间。那么显然在两条直线有交点的时候表示两架飞机同时到达0点。<br><img src="https://i.loli.net/2020/12/14/5yGFfQLixDs7UCb.jpg" alt="cf956d"><br>虽然知道了这点，但我们不能O(n^2)求直线交，该题期望的是O(nlogn)的解法。在看了杜老师(%%%)的代码后我学到了一种新的姿势：已知多条直线在两个坐标x1,x2(这道题是-w，w)的情况下，我们可以使用树状数组求逆序对的方式来计算直线的交点数量。以本题为例：我们首先定义一个结构体，储存x(坐标的绝对值),v’(考虑风速后的速度),e(通过该值在左端点一样的情况下能够比较右端点),id。我们将-w各个点的值保存在一个vector up中，w保存在另一个vector down中，然后对两个数组根据到零点时间从小到大排序。对每个点我们利用id记录up（左端点）的左边排名，然后对右端点从上往下计算，每次我们查看在该点左端点之前排名的（也就右端点在它上面，左端点在它下面的直线）有几条，利用树状数组来维护这个值即可，最后的和就是我们需要的答案。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/12/CodeForces%20-%20956D%20Contact%20ATC(%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84)/#more" rel="contents">
@@ -565,7 +565,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>ST表模板</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>ST表模板<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/10/HDU%20-%205443%20The%20Water%20Problem(ST%E8%A1%A8)/#more" rel="contents">
@@ -733,14 +733,12 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>基础树形dp，但看了题解才做出来。。<br>树形dp有两种基本形式：从根到叶子，从叶子到根。本题稍微有点特别，需要进行两次dfs才能完成整个dp。<br>我们定义一个dp数组dp[MAXN][3]。dp[i][0]记录的是节点i子树中所有节点到子树根节点i的最大距离，dp[i][1]记录的是节点i往根方向的最大距离，dp[i][2]记录的是节点i子树中所有点的到子树根节点i的次大距离。为什么要这样设计dp状态？如果我们将i节点设为根节点，我们能发现原来父亲节点也变成了一棵子树。但我们不能对每个节点都dfs一次，所以我们考虑使用一个dp[i][1]从顶向下来计算父亲节点这棵子树的距离最大值，dp[i][0],dp[i][2]的作用在后文中会写到。<br>对于dp[i][0]，dp[i][2]我们在第一次dfs中就计算出来，注意我们要记录一个一个点最长距离走的是哪个儿子longest[i],这个值在后面会用到。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> fa)</span></span>&#123;</span><br><span class="line">    dp[u][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[u];~i;i=nxt[i])&#123;</span><br><span class="line">        <span class="keyword">int</span> go=to[i];</span><br><span class="line">        <span class="keyword">if</span>(go==fa)<span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">int</span> temp=<span class="built_in">dfs1</span>(go,u)+len[i];</span><br><span class="line">        <span class="keyword">if</span>(temp&gt;dp[u][<span class="number">0</span>])&#123;</span><br><span class="line">            dp[u][<span class="number">2</span>]=dp[u][<span class="number">0</span>];</span><br><span class="line">            dp[u][<span class="number">0</span>]=temp;</span><br><span class="line">            islongest[u]=go;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(temp&gt;dp[u][<span class="number">1</span>])&#123;</span><br><span class="line">            dp[u][<span class="number">1</span>]=temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[u][<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在第二次dfs中我们计算dp[i][1]。我们在父亲节点时计算儿子节点的dp[son][1]而不是dfs进入儿子后计算。然后分类讨论</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>基础树形dp，但看了题解才做出来。。<br>树形dp有两种基本形式：从根到叶子，从叶子到根。本题稍微有点特别，需要进行两次dfs才能完成整个dp。<br>我们定义一个dp数组dp[MAXN][3]。dp[i][0]记录的是节点i子树中所有节点到子树根节点i的最大距离，dp[i][1]记录的是节点i往根方向的最大距离，dp[i][2]记录的是节点i子树中所有点的到子树根节点i的次大距离。为什么要这样设计dp状态？如果我们将i节点设为根节点，我们能发现原来父亲节点也变成了一棵子树。但我们不能对每个节点都dfs一次，所以我们考虑使用一个dp[i][1]从顶向下来计算父亲节点这棵子树的距离最大值，dp[i][0],dp[i][2]的作用在后文中会写到。<br>对于dp[i][0]，dp[i][2]我们在第一次dfs中就计算出来，注意我们要记录一个一个点最长距离走的是哪个儿子longest[i],这个值在后面会用到。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> fa)</span></span>&#123;</span><br><span class="line">    dp[u][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[u];~i;i=nxt[i])&#123;</span><br><span class="line">        <span class="keyword">int</span> go=to[i];</span><br><span class="line">        <span class="keyword">if</span>(go==fa)<span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">int</span> temp=<span class="built_in">dfs1</span>(go,u)+len[i];</span><br><span class="line">        <span class="keyword">if</span>(temp&gt;dp[u][<span class="number">0</span>])&#123;</span><br><span class="line">            dp[u][<span class="number">2</span>]=dp[u][<span class="number">0</span>];</span><br><span class="line">            dp[u][<span class="number">0</span>]=temp;</span><br><span class="line">            islongest[u]=go;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(temp&gt;dp[u][<span class="number">1</span>])&#123;</span><br><span class="line">            dp[u][<span class="number">1</span>]=temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[u][<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>在第二次dfs中我们计算dp[i][1]。我们在父亲节点时计算儿子节点的dp[son][1]而不是dfs进入儿子后计算。然后分类讨论</p>
 <ol>
 <li>对于不是longest的儿子节点，我们显然知道往根方向的最大值是儿子节点到当前节点的距离+当前节点中儿子的最大值和dp[i][1]中的较大值</li>
 <li>是longest的儿子节点，往根方向的最大值是儿子节点到当前节点的距离+dp[i][2]和dp[i][1]中的较大值(注意此时原来所有儿子中的最大值已经不能使用了，因为这个最大值包含在dp[son][0]中，此时只能选择次大值)</li>
 </ol>
-<p>最后遍历所有节点取max(dp[i][0],dp[i][1])即可</p>
+<p>最后遍历所有节点取max(dp[i][0],dp[i][1])即可<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/06/HDU%20-%202196%20Computer(%E6%A0%91%E5%BD%A2dp)/#more" rel="contents">
@@ -897,7 +895,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意是给定一个匹配好的括号序列，后面有Q次操作，每次操作将第q位的括号反转，你需要找到一个位置反转该位置上的括号让它重新匹配。位置要求是所有可行位置中最左边的。<br>我们令左括号为1，右括号为-1，并求出前缀和。考虑将右括号变为左括号的过程，我们能发现该操作的影响是从该位置到序列尾部的前缀和加2。将左括号变为右括号则是区间-2。为了反转后的括号序列是合法的，我们的前缀和中不能出现小于0的数。因而对操作是右括号变为左括号的情况我们可以将问题转化为哪个位置到末尾的最小值是2，以上所有操作可以使用二分+区间更新线段树实现。而对于左括号变为右括号的操作，我们只要维护一个set保存右括号的下标，然后取出最小的下标即可（很简单的思路，简单画一画就能发现）。</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意是给定一个匹配好的括号序列，后面有Q次操作，每次操作将第q位的括号反转，你需要找到一个位置反转该位置上的括号让它重新匹配。位置要求是所有可行位置中最左边的。<br>我们令左括号为1，右括号为-1，并求出前缀和。考虑将右括号变为左括号的过程，我们能发现该操作的影响是从该位置到序列尾部的前缀和加2。将左括号变为右括号则是区间-2。为了反转后的括号序列是合法的，我们的前缀和中不能出现小于0的数。因而对操作是右括号变为左括号的情况我们可以将问题转化为哪个位置到末尾的最小值是2，以上所有操作可以使用二分+区间更新线段树实现。而对于左括号变为右括号的操作，我们只要维护一个set保存右括号的下标，然后取出最小的下标即可（很简单的思路，简单画一画就能发现）。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/04/CodeForces%20Gym%20-%20100803G%20Flipping%20Parentheses(%E7%BA%BF%E6%AE%B5%E6%A0%91)/#more" rel="contents">
@@ -1239,7 +1237,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我们要解的一个方程是ax+by+cz=w。显然枚举是O(n^3)会超时，生成函数无法解决x,y,z是负数的情况。注意到m的范围只有5000，所以考虑将方程转化为ax+by=w-cz然后枚举z(-5000,5000)再跑extgcd。由于x*(res/gcds)+k*b/gcds,y*(res/gcds)-k*a/gcds都属于[-m,m]，我们能得到两个k的范围，它们的交集长度的累加就是答案。时间复杂度O(nlogn)</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我们要解的一个方程是ax+by+cz=w。显然枚举是O(n^3)会超时，生成函数无法解决x,y,z是负数的情况。注意到m的范围只有5000，所以考虑将方程转化为ax+by=w-cz然后枚举z(-5000,5000)再跑extgcd。由于x*(res/gcds)+k*b/gcds,y*(res/gcds)-k*a/gcds都属于[-m,m]，我们能得到两个k的范围，它们的交集长度的累加就是答案。时间复杂度O(nlogn)<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/26/UVA%20-%2013250%20Balance%20Game(%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97)/#more" rel="contents">
@@ -1407,9 +1405,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>简单的状压dp。令dp[i]状态中1为已死亡的鱼，0为存活的鱼，dp表示转移到这个状态的概率。dp转移方程为：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[state|(<span class="number">1</span>&lt;&lt;i)]+=topro*dp[state]*pro[j][i];</span><br><span class="line">dp[state|(<span class="number">1</span>&lt;&lt;j)]+=topro*dp[state]*pro[i][j];</span><br></pre></td></tr></table></figure>
-<p>这个转移方程的灵感来自于全概率公式，topro表示选中这一对鱼的概率，pro表示i吃j的概率，由全概率公式可知我们把所有可能的转移概率加起来就是最终答案。</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>简单的状压dp。令dp[i]状态中1为已死亡的鱼，0为存活的鱼，dp表示转移到这个状态的概率。dp转移方程为：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[state|(<span class="number">1</span>&lt;&lt;i)]+=topro*dp[state]*pro[j][i];</span><br><span class="line">dp[state|(<span class="number">1</span>&lt;&lt;j)]+=topro*dp[state]*pro[i][j];</span><br></pre></td></tr></table></figure><br>这个转移方程的灵感来自于全概率公式，topro表示选中这一对鱼的概率，pro表示i吃j的概率，由全概率公式可知我们把所有可能的转移概率加起来就是最终答案。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/24/CodeForces%20-%2016E%20Fish(%E7%8A%B6%E5%8E%8Bdp)/#more" rel="contents">
@@ -1577,7 +1573,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>首先对水果按出现时间为第一关键字，消失时间为第二关键字来排序。dp[i]为当物品i出现时将它及它之前的水果全切完的最大价值。转移时第一重循环顺序枚举物品，设置一个计数器记录从i水果到第二重循环的那个水果之间有几个还在空中。第二重循环从当前物品往前找，每当发现其还在空中时计数器++。然后就是dp[i]=max(dp[i],dp[j-1]+cnt&gt;2?cnt:0)来转移。这里要注意的一点是如果左端点重合的区间要取数组中最左边的一个区间，因为题意要求我们对在空中的水过一次切完不能有剩，不这样做的话可能会让结果的答案变大。</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>首先对水果按出现时间为第一关键字，消失时间为第二关键字来排序。dp[i]为当物品i出现时将它及它之前的水果全切完的最大价值。转移时第一重循环顺序枚举物品，设置一个计数器记录从i水果到第二重循环的那个水果之间有几个还在空中。第二重循环从当前物品往前找，每当发现其还在空中时计数器++。然后就是dp[i]=max(dp[i],dp[j-1]+cnt&gt;2?cnt:0)来转移。这里要注意的一点是如果左端点重合的区间要取数组中最左边的一个区间，因为题意要求我们对在空中的水过一次切完不能有剩，不这样做的话可能会让结果的答案变大。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/19/UVA%20-%2012018%20Juice%20Extractor(dp)/#more" rel="contents">
@@ -1734,7 +1730,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意可得我们要求一个网络流的最小割。但由于dinic时间复杂度是O(EV^2)，显然对于这张图来说边数会达到10^6以上，所以dinic的时间复杂度是不满足我们的要求的。所以我们学习一个O(nlogn)的姿势——网络流最小割转对偶图最短路。对偶图的概念摸<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AF%B9%E5%81%B6%E5%9B%BE/10506149?fr=aladdin">这里</a>。通过观察我们能发现对偶图中的环即对应着原图的割，但直接用对偶图环的性质我们并没有什么高效的算法。所以我们在建图过程中稍作修改，我们这样对样例建图：<br><img src="https://i.loli.net/2020/12/14/QcBPL9XfAvhVrCx.png" alt="bzoj1001"><br>我们先在左上角的源点和右下角的汇点连一条线，如上图，然后再建对偶图。这时比较对偶图的性质显然可以知道对偶图中0到1的最短路即为最小割，运用spfa或dijkstra堆优化就能做到O(nlogn)。</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意可得我们要求一个网络流的最小割。但由于dinic时间复杂度是O(EV^2)，显然对于这张图来说边数会达到10^6以上，所以dinic的时间复杂度是不满足我们的要求的。所以我们学习一个O(nlogn)的姿势——网络流最小割转对偶图最短路。对偶图的概念摸<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AF%B9%E5%81%B6%E5%9B%BE/10506149?fr=aladdin">这里</a>。通过观察我们能发现对偶图中的环即对应着原图的割，但直接用对偶图环的性质我们并没有什么高效的算法。所以我们在建图过程中稍作修改，我们这样对样例建图：<br><img src="https://i.loli.net/2020/12/14/QcBPL9XfAvhVrCx.png" alt="bzoj1001"><br>我们先在左上角的源点和右下角的汇点连一条线，如上图，然后再建对偶图。这时比较对偶图的性质显然可以知道对偶图中0到1的最短路即为最小割，运用spfa或dijkstra堆优化就能做到O(nlogn)。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/16/BZOJ%20-%201001%20%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90(%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E8%BD%AC%E5%AF%B9%E5%81%B6%E5%9B%BE%E6%9C%80%E7%9F%AD%E8%B7%AF)/#more" rel="contents">
@@ -1891,7 +1887,7 @@
 
       
         
-          <p>prufer序列学习笔记</p>
+          <p>prufer序列学习笔记<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/13/CodeForces%20Gym%20-%20100959J%20Ropes(prufer%E5%BA%8F%E5%88%97)/#more" rel="contents">

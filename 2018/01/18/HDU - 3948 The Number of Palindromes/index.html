@@ -420,8 +420,7 @@
       
 
       
-        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>计算本质不同的回文串，回文树模板题</p>
-<span id="more"></span>
+        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>计算本质不同的回文串，回文树模板题<br><span id="more"></span></p>
 <h3 id="回文树"><a href="#回文树" class="headerlink" title="回文树"></a>回文树</h3><p>顾名思义，就是一个解决关于回文问题的数据结构，通常用来处理本质不同回文的个数。</p>
 <h3 id="回文树的元素"><a href="#回文树的元素" class="headerlink" title="回文树的元素"></a>回文树的元素</h3><p>1.len[i]:i节点表示的回文串长度<br>2.next[i][c]:在i节点表示的回文串两边加c得到的回文串<br>3.fail[i]:当i失配后跳转不等于i表示的回文串自身的最长后缀回文<br>4.cnt[i]:节点i表示的本质不同的串的个数<br>5.num[i]:以节点i节点最右端点为回文串的结尾的回文串个数（需要在建完树后运行count）<br>6.last:上一个构建的回文串的位置<br>7.S[i]:第i次加入的字符S[0]=-1<br>8.p:添加的节点个数<br>9.n:添加的字符个数</p>
 <h3 id="回文树的构造"><a href="#回文树的构造" class="headerlink" title="回文树的构造"></a>回文树的构造</h3><p>在参考中的《Palindromic Tree——回文树【处理一类回文串问题的强力工具】》详细讲解了回文树的构造方式，这里不再重复，主要讲讲我对回文树fail的理解。<br><img src="https://i.loli.net/2020/12/14/TCMupwrNEIsxYKt.jpg" alt="回文树的构造"><br>当我们加入一个字符X时，如果我们希望XAX是一个回文串，那么A就必须是一个回文串，所以fail指针指向的就是在到结尾结束的回文串中更短的那个。如果A等于零，那么fail最终会指向长度为1的回文串，也就是我们想加入的字符X。这就是fail指针的意义。</p>

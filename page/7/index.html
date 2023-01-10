@@ -408,7 +408,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>线性基模板题</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>线性基模板题<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/22/HDU%20-%203949%20XOR/#more" rel="contents">
@@ -565,7 +565,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>类似插头dp的题，但数据范围到了10^18次。我们发现他的宽度只有4，若我们令a[n]为方案数，b[n]为不可分割的矩阵数，通过打表我们能发现a[1]=b[1]=1，b[2]=4，且n&gt;=3时有：<br>当n为奇数时：b[n]=2<br>当n为偶数时：b[n]=3<br>我的理解是更多分割的方案在之前已经有过计算，所以只有把原有的矩阵拉长的方案没有计算过，我们使用递推式计算就是要使用这一部分。<br>最后计算可得a[n]=a[n-1]+5a[n-2]+a[n-3]-a[n-4]，然后使用矩阵快速幂。</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>类似插头dp的题，但数据范围到了10^18次。我们发现他的宽度只有4，若我们令a[n]为方案数，b[n]为不可分割的矩阵数，通过打表我们能发现a[1]=b[1]=1，b[2]=4，且n&gt;=3时有：<br>当n为奇数时：b[n]=2<br>当n为偶数时：b[n]=3<br>我的理解是更多分割的方案在之前已经有过计算，所以只有把原有的矩阵拉长的方案没有计算过，我们使用递推式计算就是要使用这一部分。<br>最后计算可得a[n]=a[n-1]+5a[n-2]+a[n-3]-a[n-4]，然后使用矩阵快速幂。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/21/HDU%20-%206185%20Covering/#more" rel="contents">
@@ -733,7 +733,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>计算本质不同的回文串，回文树模板题</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>计算本质不同的回文串，回文树模板题<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/18/HDU%20-%203948%20The%20Number%20of%20Palindromes/#more" rel="contents">
@@ -901,9 +901,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>做的第一道状压dp题。状压dp通常是用来解一些NP完全（没有多项式时间算法）的问题。当然，这种题的范围一般比较小。状压dp的思路就是使用2进制保存状态（这也是为什么范围比较小的原因之一），比如旅行商问题，我们用数位上的1代表以访问过的点，0则是未访问过。通常状压dp的格式是</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;(<span class="number">1</span>&lt;&lt;n)<span class="number">-1</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">            <span class="comment">//dp的转移方程</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>大部分的时间复杂度为O(n^2log(n))。<br>一开始想写个O((n^2)(2^n))的，结果似乎会TLE，题目要求的复杂度是O((2^n)n)。对于这道题我们能够发现，选取的顺序其实是无关的。所以我们强制要求顺序取，也就是i之前的物品必须都取了，这个思路最终表现在剪枝上，我们对1-(1&lt;&lt;n-1)的每个数都只在最低0位上进行或1的操作。我们很显然发现每个点都取一次，那么显然时间复杂度为O((2^n)n).</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>做的第一道状压dp题。状压dp通常是用来解一些NP完全（没有多项式时间算法）的问题。当然，这种题的范围一般比较小。状压dp的思路就是使用2进制保存状态（这也是为什么范围比较小的原因之一），比如旅行商问题，我们用数位上的1代表以访问过的点，0则是未访问过。通常状压dp的格式是<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;(<span class="number">1</span>&lt;&lt;n)<span class="number">-1</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">            <span class="comment">//dp的转移方程</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>大部分的时间复杂度为O(n^2log(n))。<br>一开始想写个O((n^2)(2^n))的，结果似乎会TLE，题目要求的复杂度是O((2^n)n)。对于这道题我们能够发现，选取的顺序其实是无关的。所以我们强制要求顺序取，也就是i之前的物品必须都取了，这个思路最终表现在剪枝上，我们对1-(1&lt;&lt;n-1)的每个数都只在最低0位上进行或1的操作。我们很显然发现每个点都取一次，那么显然时间复杂度为O((2^n)n).<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/14/CodeForces%20-%208C%20Looking%20for%20Order%20/#more" rel="contents">
@@ -1060,7 +1058,7 @@
 
       
         
-          <p>FFT模板题</p>
+          <p>FFT模板题<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/07/HDU%20-%201402%20A%20%20multiply%20B%20Problem%20Plus/#more" rel="contents">
@@ -1217,7 +1215,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>DHU数据结构期末考题，来源bzoj4552[Tjoi2016&amp;Heoi2016]。非常好的一道线段树的题目，让我看到了自己对二分，线段树的理解尚浅。<br>本题的思路是二分处于q位置上的数字，然后将原数列转换成01序列（比他大置1，反之置0）。对于一个01序列，按递增排序相当于把后半部分置1，前半部分置0（线段树区间更新）。递减思路类似。最后我们check返回q位置上的值。</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>DHU数据结构期末考题，来源bzoj4552[Tjoi2016&amp;Heoi2016]。非常好的一道线段树的题目，让我看到了自己对二分，线段树的理解尚浅。<br>本题的思路是二分处于q位置上的数字，然后将原数列转换成01序列（比他大置1，反之置0）。对于一个01序列，按递增排序相当于把后半部分置1，前半部分置0（线段树区间更新）。递减思路类似。最后我们check返回q位置上的值。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/12/21/DHUOJ%202017121906&&BZOJ%204552%20%E6%8E%92%E5%BA%8F/#more" rel="contents">
@@ -1534,7 +1532,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>CCPC比赛的时候感觉自己dp实在太差了，最近准备补一波<br>本题的意思是从一个矩阵的左上角走到右下角（只能向右和向下），问路径上数的积的末尾最少有几个零。我们可以想到把2和5分开考虑，分别dp然后看右下角是2少还是5少，然后回溯打印路径。需要注意的是当矩阵中有0时，我们要考虑如果我们右下角能得到一个一个末尾0都没有的数的话，我们选这种方案，不然经过0的路径一定是最优的（末尾只有一个0）。<br>转移方程：<br>dp1[i][j]=min(dp1[i-1][j],dp1[i][j-1])+two[i][j];<br>dp2[i][j]=min(dp2[i-1][j],dp2[i][j-1])+five[i][j];</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>CCPC比赛的时候感觉自己dp实在太差了，最近准备补一波<br>本题的意思是从一个矩阵的左上角走到右下角（只能向右和向下），问路径上数的积的末尾最少有几个零。我们可以想到把2和5分开考虑，分别dp然后看右下角是2少还是5少，然后回溯打印路径。需要注意的是当矩阵中有0时，我们要考虑如果我们右下角能得到一个一个末尾0都没有的数的话，我们选这种方案，不然经过0的路径一定是最优的（末尾只有一个0）。<br>转移方程：<br>dp1[i][j]=min(dp1[i-1][j],dp1[i][j-1])+two[i][j];<br>dp2[i][j]=min(dp2[i-1][j],dp2[i][j-1])+five[i][j];<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/12/11/CodeForces%20-%202B%20The%20least%20round%20way/#more" rel="contents">
@@ -1692,7 +1690,7 @@
       
         
           <p>热身赛光荣打铁，只能回来补题。。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题目来源Kickstart Round A 2017 Problem A。大致意思是从一个m*n矩形中能选出多少个正方形（这里给的是点数，我们默认m-1,n-1）。对于这个问题我们把斜着的正方形和正常的正方形分开考虑。<br>对于正常的正方形有：<br><img src="https://i.loli.net/2020/12/14/hS2VUwCMbnG8Xrc.png" alt="gs1"><br>对于斜着的正方形有：（画张图考虑后能发现斜着且撑满的正方形只有k-1个，然后从小正方形到大正方形累加）<br><img src="https://i.loli.net/2020/12/16/pe8bATZFcU6Oq9j.png" alt="gs2"><br>化简可得<br><img src="https://i.loli.net/2020/12/14/hAnFYd6ZPUt43Kp.png" alt="gs3"><br>利用平方和公式和立方和公式我们能O(1)求出答案</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题目来源Kickstart Round A 2017 Problem A。大致意思是从一个m*n矩形中能选出多少个正方形（这里给的是点数，我们默认m-1,n-1）。对于这个问题我们把斜着的正方形和正常的正方形分开考虑。<br>对于正常的正方形有：<br><img src="https://i.loli.net/2020/12/14/hS2VUwCMbnG8Xrc.png" alt="gs1"><br>对于斜着的正方形有：（画张图考虑后能发现斜着且撑满的正方形只有k-1个，然后从小正方形到大正方形累加）<br><img src="https://i.loli.net/2020/12/16/pe8bATZFcU6Oq9j.png" alt="gs2"><br>化简可得<br><img src="https://i.loli.net/2020/12/14/hAnFYd6ZPUt43Kp.png" alt="gs3"><br>利用平方和公式和立方和公式我们能O(1)求出答案<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/11/29/CCPC%20%E7%83%AD%E8%BA%AB%E8%B5%9BA%20Square%20Counting/#more" rel="contents">
@@ -1849,7 +1847,7 @@
 
       
         
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>模板题，保存DFS序后使用RMQ求LCA。这个算法相对来说比较好理解。我们访问的顺序是类似根-子节点-根的顺序，记录访问顺序后使用RMQ查询两点之间depth的最小值就是LCA。这题我真的是无限RE,最后发现是自己ST表的模板有问题。。</p>
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>模板题，保存DFS序后使用RMQ求LCA。这个算法相对来说比较好理解。我们访问的顺序是类似根-子节点-根的顺序，记录访问顺序后使用RMQ查询两点之间depth的最小值就是LCA。这题我真的是无限RE,最后发现是自己ST表的模板有问题。。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/11/20/HDU%20-%202586%20How%20far%20away%20%EF%BC%9F/#more" rel="contents">

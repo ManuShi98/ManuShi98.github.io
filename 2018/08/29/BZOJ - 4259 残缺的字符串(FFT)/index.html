@@ -407,8 +407,7 @@
       
 
       
-        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>参考了<a target="_blank" rel="noopener" href="https://www.cnblogs.com/clrs97/p/4814499.html">Claris老师的博客</a>。该题最精髓的操作就是将形如A[i]B[i]的式子做一个反转，形成A[n-i]B[i]的卷积形式，这样就能够往FFT上靠。似乎BZOJ一道权限题“快速傅里叶变换”也是使用了这样一个思路，所以这应该算一个比较经典的技巧，在知道这一步后这道题就是FFT的模板题了。</p>
-<span id="more"></span>
+        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>参考了<a target="_blank" rel="noopener" href="https://www.cnblogs.com/clrs97/p/4814499.html">Claris老师的博客</a>。该题最精髓的操作就是将形如A[i]B[i]的式子做一个反转，形成A[n-i]B[i]的卷积形式，这样就能够往FFT上靠。似乎BZOJ一道权限题“快速傅里叶变换”也是使用了这样一个思路，所以这应该算一个比较经典的技巧，在知道这一步后这道题就是FFT的模板题了。<br><span id="more"></span></p>
 <h3 id="一点小吐槽"><a href="#一点小吐槽" class="headerlink" title="一点小吐槽"></a>一点小吐槽</h3><ol>
 <li>为什么洛谷这题只有5组数据…最后我不得不拿了BZOJ的数据重测了下。</li>
 <li>O2优化这么牛批的嘛，不开跑了4.4s开了只跑了1s多啊？如果比5组的总时间，那么速度上快了将近10倍。。</li>

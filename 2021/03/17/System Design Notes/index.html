@@ -409,8 +409,7 @@
       
 
       
-        <p>系统设计笔记，自用。</p>
-<span id="more"></span>
+        <p>系统设计笔记，自用。<br><span id="more"></span></p>
 <h1 id="系统设计的大致流程"><a href="#系统设计的大致流程" class="headerlink" title="系统设计的大致流程"></a>系统设计的大致流程</h1><p>系统设计的流程可以大致分为以下的步骤：</p>
 <h2 id="1-需求分类"><a href="#1-需求分类" class="headerlink" title="1. 需求分类"></a>1. 需求分类</h2><p>由于在面试时我们只有30-40分钟的时间，所以知道准确的需求是必要的。比如设计一个类推特软件，我们要知道：</p>
 <ol>
@@ -508,74 +507,82 @@
 <li>除了哪个用户创造了这个短链接，在表之前没有其他的关系（1对多，多对多）</li>
 <li>我们的服务是读频繁服务</li>
 </ol>
-<h3 id="表设计"><a href="#表设计" class="headerlink" title="表设计"></a>表设计</h3><h4 id="URL表"><a href="#URL表" class="headerlink" title="URL表"></a>URL表</h4><table>
+<h3 id="表设计"><a href="#表设计" class="headerlink" title="表设计"></a>表设计</h3><h4 id="URL表"><a href="#URL表" class="headerlink" title="URL表"></a>URL表</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center">列名</th>
-<th align="center">数据类型</th>
-<th align="center">备注</th>
+<th style="text-align:center">列名</th>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">备注</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">HashURL</td>
-<td align="center">varchar(16)</td>
-<td align="center">主键</td>
+<tbody>
+<tr>
+<td style="text-align:center">HashURL</td>
+<td style="text-align:center">varchar(16)</td>
+<td style="text-align:center">主键</td>
 </tr>
 <tr>
-<td align="center">OriginalURL</td>
-<td align="center">varchar(512)</td>
-<td align="center">非空</td>
+<td style="text-align:center">OriginalURL</td>
+<td style="text-align:center">varchar(512)</td>
+<td style="text-align:center">非空</td>
 </tr>
 <tr>
-<td align="center">CreationDate</td>
-<td align="center">datetime</td>
-<td align="center">非空</td>
+<td style="text-align:center">CreationDate</td>
+<td style="text-align:center">datetime</td>
+<td style="text-align:center">非空</td>
 </tr>
 <tr>
-<td align="center">ExpirationDate</td>
-<td align="center">datetime</td>
-<td align="center">非空</td>
+<td style="text-align:center">ExpirationDate</td>
+<td style="text-align:center">datetime</td>
+<td style="text-align:center">非空</td>
 </tr>
 <tr>
-<td align="center">UserId</td>
-<td align="center">int</td>
-<td align="center">外键</td>
+<td style="text-align:center">UserId</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">外键</td>
 </tr>
-</tbody></table>
-<h4 id="User表"><a href="#User表" class="headerlink" title="User表"></a>User表</h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="User表"><a href="#User表" class="headerlink" title="User表"></a>User表</h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center">列名</th>
-<th align="center">数据类型</th>
-<th align="center">备注</th>
+<th style="text-align:center">列名</th>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">备注</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">UserId</td>
-<td align="center">int</td>
-<td align="center">主键</td>
+<tbody>
+<tr>
+<td style="text-align:center">UserId</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">主键</td>
 </tr>
 <tr>
-<td align="center">Name</td>
-<td align="center">varchar(20)</td>
-<td align="center"></td>
+<td style="text-align:center">Name</td>
+<td style="text-align:center">varchar(20)</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">Email</td>
-<td align="center">varchar(32)</td>
-<td align="center"></td>
+<td style="text-align:center">Email</td>
+<td style="text-align:center">varchar(32)</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">CreationDate</td>
-<td align="center">datetime</td>
-<td align="center">非空</td>
+<td style="text-align:center">CreationDate</td>
+<td style="text-align:center">datetime</td>
+<td style="text-align:center">非空</td>
 </tr>
 <tr>
-<td align="center">LastLogin</td>
-<td align="center">datetime</td>
-<td align="center">非空</td>
+<td style="text-align:center">LastLogin</td>
+<td style="text-align:center">datetime</td>
+<td style="text-align:center">非空</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 
       
     </div>
