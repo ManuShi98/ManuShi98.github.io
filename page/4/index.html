@@ -305,6 +305,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/07/22/BZOJ%20-%203211%20%E8%8A%B1%E7%A5%9E%E6%B8%B8%E5%8E%86%E5%90%84%E5%9B%BD(%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%BC%80%E6%96%B9)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/22/BZOJ%20-%203211%20%E8%8A%B1%E7%A5%9E%E6%B8%B8%E5%8E%86%E5%90%84%E5%9B%BD(%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%BC%80%E6%96%B9)/" itemprop="url">BZOJ - 3211 花神游历各国(线段树开方)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-22T10:15:47-07:00">
+                2018-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E7%BA%BF%E6%AE%B5%E6%A0%91/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>要求线段树实现：</p>
+<ol>
+<li>区间求和</li>
+<li>区间开方</li>
+</ol>
+<p>我们发现，对于一个不全是0或1的区间，我们对每个数开方后的和只能暴力计算，无法优化。但我们发现即便是10^9的数字也会在6次内变成1(因为取了floor)，而0，1开方后是不会再变化的，因而对于全是0，1的区间做开方后的区间和同样是不会再变化的。所以对全是0或1的区间我们记录一个flag，更新碰到flag就直接退出不用再更新。为什么这样的时间复杂度能够保证？我们已经知道10^9的数字最多开方6次，因而对于10^5的每个点，最多只有六次更新是有效的（其他直接O(1)continue了),所以时间复杂度是6*10^5，因而完全能接受。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/22/BZOJ%20-%203211%20%E8%8A%B1%E7%A5%9E%E6%B8%B8%E5%8E%86%E5%90%84%E5%9B%BD(%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%BC%80%E6%96%B9)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/07/18/Aizu%20-%201313%20Intersection%20of%20Two%20Prisms(%E8%BE%9B%E6%99%AE%E6%A3%AE%E7%A7%AF%E5%88%86)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1771,163 +1933,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/05/16/BZOJ%20-%201001%20%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90(%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E8%BD%AC%E5%AF%B9%E5%81%B6%E5%9B%BE%E6%9C%80%E7%9F%AD%E8%B7%AF)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/16/BZOJ%20-%201001%20%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90(%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E8%BD%AC%E5%AF%B9%E5%81%B6%E5%9B%BE%E6%9C%80%E7%9F%AD%E8%B7%AF)/" itemprop="url">BZOJ - 1001 狼抓兔子(网络流最小割转对偶图最短路)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-16T14:01:18-07:00">
-                2018-05-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/%E7%BD%91%E7%BB%9C%E6%B5%81/" itemprop="url" rel="index">
-                    <span itemprop="name">网络流</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意可得我们要求一个网络流的最小割。但由于dinic时间复杂度是O(EV^2)，显然对于这张图来说边数会达到10^6以上，所以dinic的时间复杂度是不满足我们的要求的。所以我们学习一个O(nlogn)的姿势——网络流最小割转对偶图最短路。对偶图的概念摸<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AF%B9%E5%81%B6%E5%9B%BE/10506149?fr=aladdin">这里</a>。通过观察我们能发现对偶图中的环即对应着原图的割，但直接用对偶图环的性质我们并没有什么高效的算法。所以我们在建图过程中稍作修改，我们这样对样例建图：<br><img src="https://i.loli.net/2020/12/14/QcBPL9XfAvhVrCx.png" alt="bzoj1001"><br>我们先在左上角的源点和右下角的汇点连一条线，如上图，然后再建对偶图。这时比较对偶图的性质显然可以知道对偶图中0到1的最短路即为最小割，运用spfa或dijkstra堆优化就能做到O(nlogn)。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/16/BZOJ%20-%201001%20%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90(%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E8%BD%AC%E5%AF%B9%E5%81%B6%E5%9B%BE%E6%9C%80%E7%9F%AD%E8%B7%AF)/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1980,7 +1985,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">93</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1991,7 +1996,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">71</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2002,7 +2007,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

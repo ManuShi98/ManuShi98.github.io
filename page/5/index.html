@@ -305,6 +305,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/05/16/BZOJ%20-%201001%20%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90(%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E8%BD%AC%E5%AF%B9%E5%81%B6%E5%9B%BE%E6%9C%80%E7%9F%AD%E8%B7%AF)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ManuShi98">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/16/BZOJ%20-%201001%20%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90(%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E8%BD%AC%E5%AF%B9%E5%81%B6%E5%9B%BE%E6%9C%80%E7%9F%AD%E8%B7%AF)/" itemprop="url">BZOJ - 1001 狼抓兔子(网络流最小割转对偶图最短路)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-16T14:01:18-07:00">
+                2018-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E7%BD%91%E7%BB%9C%E6%B5%81/" itemprop="url" rel="index">
+                    <span itemprop="name">网络流</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意可得我们要求一个网络流的最小割。但由于dinic时间复杂度是O(EV^2)，显然对于这张图来说边数会达到10^6以上，所以dinic的时间复杂度是不满足我们的要求的。所以我们学习一个O(nlogn)的姿势——网络流最小割转对偶图最短路。对偶图的概念摸<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AF%B9%E5%81%B6%E5%9B%BE/10506149?fr=aladdin">这里</a>。通过观察我们能发现对偶图中的环即对应着原图的割，但直接用对偶图环的性质我们并没有什么高效的算法。所以我们在建图过程中稍作修改，我们这样对样例建图：<br><img src="https://i.loli.net/2020/12/14/QcBPL9XfAvhVrCx.png" alt="bzoj1001"><br>我们先在左上角的源点和右下角的汇点连一条线，如上图，然后再建对偶图。这时比较对偶图的性质显然可以知道对偶图中0到1的最短路即为最小割，运用spfa或dijkstra堆优化就能做到O(nlogn)。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/16/BZOJ%20-%201001%20%E7%8B%BC%E6%8A%93%E5%85%94%E5%AD%90(%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%B0%8F%E5%89%B2%E8%BD%AC%E5%AF%B9%E5%81%B6%E5%9B%BE%E6%9C%80%E7%9F%AD%E8%B7%AF)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/04/13/CodeForces%20Gym%20-%20100959J%20Ropes(prufer%E5%BA%8F%E5%88%97)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1762,163 +1919,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://manushi98.github.io/2018/03/15/HDU%20-%204514%20%E6%B9%AB%E6%B9%AB%E7%B3%BB%E5%88%97%E6%95%85%E4%BA%8B%E2%80%94%E2%80%94%E8%AE%BE%E8%AE%A1%E9%A3%8E%E6%99%AF%E7%BA%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://i.loli.net/2020/12/14/8mG9PknVTAeH4cf.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ManuShi98">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/15/HDU%20-%204514%20%E6%B9%AB%E6%B9%AB%E7%B3%BB%E5%88%97%E6%95%85%E4%BA%8B%E2%80%94%E2%80%94%E8%AE%BE%E8%AE%A1%E9%A3%8E%E6%99%AF%E7%BA%BF/" itemprop="url">HDU - 4514 湫湫系列故事——设计风景线</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-15T19:19:28-07:00">
-                2018-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/" itemprop="url" rel="index">
-                    <span itemprop="name">树的直径</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>并查集判环+树的直径。注意树有可能是不连通的。<br>树的直径通过两次bfs就能得到，具体证明见<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wuyiqi/archive/2012/04/08/2437424.html">树的直径（最长路）的详细证明</a><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/15/HDU%20-%204514%20%E6%B9%AB%E6%B9%AB%E7%B3%BB%E5%88%97%E6%95%85%E4%BA%8B%E2%80%94%E2%80%94%E8%AE%BE%E8%AE%A1%E9%A3%8E%E6%99%AF%E7%BA%BF/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1971,7 +1971,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">93</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1982,7 +1982,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">71</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1993,7 +1993,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
